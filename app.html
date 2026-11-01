@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pikola – 毎日の中心に</title>
+<meta name="description" content="予定・タスク・時間割・お金・ノート・パスワードを、ひとつにまとめた時間管理アプリ。iPhone・iPad・Mac 対応。">
+<meta property="og:title" content="Pikola – 毎日の中心に">
+<meta property="og:description" content="予定・タスク・時間割・お金・ノート・パスワードを、ひとつに。">
+<meta property="og:image" content="https://circle99-app.github.io/pikola-share/img/ja_01.jpg">
+<meta name="apple-itunes-app" content="app-id=6819705084">
+<link rel="icon" href="icon.png">
+<style>
+:root{--red:#C0393F;--bg:#FBF4F3;--ink:#222;--sub:#6b6b6b}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Helvetica Neue","PingFang TC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:var(--red)}
+.lang{display:flex;justify-content:flex-end;gap:6px;padding:12px 16px 0;max-width:980px;margin:0 auto}
+.lang button{border:1px solid #e5cfcc;background:#fff;border-radius:16px;padding:4px 12px;font-size:13px;cursor:pointer;color:#555}
+.lang button.on{background:var(--red);color:#fff;border-color:var(--red)}
+.hero{background:linear-gradient(180deg,#d65a4e,#b0342c);color:#fff;text-align:center;padding:48px 16px 56px;margin-top:12px}
+.hero img{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.hero h1{font-size:40px;margin:16px 0 4px;letter-spacing:.02em}
+.hero p{font-size:18px;margin:0 auto;max-width:560px;opacity:.95}
+.store{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:14px;padding:12px 22px;margin-top:24px;font-weight:700;font-size:16px}
+.store small{display:block;font-size:11px;font-weight:400;opacity:.85}
+.devices{font-size:14px;margin-top:12px;opacity:.9}
+main{max-width:980px;margin:0 auto;padding:0 16px 48px}
+h2{text-align:center;font-size:24px;margin:48px 0 8px}
+.lead{text-align:center;color:var(--sub);margin:0 0 24px}
+.shots{display:flex;gap:16px;overflow-x:auto;padding:8px 4px 16px;scroll-snap-type:x mandatory}
+.shots img{width:220px;flex:none;border-radius:20px;box-shadow:0 6px 18px rgba(0,0,0,.12);scroll-snap-align:start}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+a.card{display:block;text-decoration:none;color:inherit;transition:box-shadow .15s,transform .15s}
+a.card:hover{box-shadow:0 6px 18px rgba(0,0,0,.12);transform:translateY(-2px)}
+.card h3{margin:0 0 6px;font-size:18px;color:var(--red)}
+.card .more{display:block;margin-top:10px;font-size:14px;color:var(--red);font-weight:600}
+.card ul{margin:0;padding-left:1.2em;font-size:15px}
+.name{background:#fff;border-radius:18px;padding:20px;text-align:center;font-size:15px}
+footer{text-align:center;font-size:13px;color:var(--sub);padding:24px 16px 40px}
+footer a{margin:0 6px}
+body:not(.ja) [data-l=ja],body:not(.en) [data-l=en],body:not(.zh) [data-l=zh]{display:none!important}
+</style>
+</head>
+<body class="ja">
+<div class="lang">
+  <button data-set="ja" class="on">日本語</button>
+  <button data-set="en">English</button>
+  <button data-set="zh">繁體中文</button>
+</div>
+
+<section class="hero">
+  <img src="icon.png" alt="Pikola">
+  <h1>Pikola</h1>
+  <p data-l="ja">予定・タスク・時間割・お金・ノート・パスワードを、ひとつに。<br>あなたの毎日の中心になる時間管理アプリ。</p>
+  <p data-l="en">Your schedule, tasks, timetable, money, notes, and passwords — all in one.<br>A time-management app at the center of your day.</p>
+  <p data-l="zh">行程、待辦事項、課表、金錢、筆記與密碼，全部整合在一起。<br>成為你每一天中心的時間管理 App。</p>
+  <a class="store" href="https://apps.apple.com/app/pikola/id6819705084">
+    <svg width="22" height="26" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+    <span><small data-l="ja">App Store から</small><small data-l="en">Download on the</small><small data-l="zh">在 App Store</small><span data-l="ja">ダウンロード</span><span data-l="en">App Store</span><span data-l="zh">下載</span></span>
+  </a>
+  <div class="devices" data-l="ja">iPhone・iPad・Mac 対応 ／ 無料</div>
+  <div class="devices" data-l="en">For iPhone, iPad, and Mac / Free</div>
+  <div class="devices" data-l="zh">支援 iPhone、iPad、Mac ／ 免費</div>
+</section>
+
+<main>
+  <div class="shots" data-l="ja"><img src="img/ja_01.jpg" alt=""><img src="img/ja_03.jpg" alt=""><img src="img/ja_05.jpg" alt=""><img src="img/ja_07.jpg" alt=""><img src="img/ja_08.jpg" alt=""><img src="img/ja_10.jpg" alt=""></div>
+  <div class="shots" data-l="en"><img src="img/en_01.jpg" alt=""><img src="img/en_03.jpg" alt=""><img src="img/en_05.jpg" alt=""><img src="img/en_07.jpg" alt=""><img src="img/en_08.jpg" alt=""><img src="img/en_10.jpg" alt=""></div>
+  <div class="shots" data-l="zh"><img src="img/zh-Hant_01.jpg" alt=""><img src="img/zh-Hant_03.jpg" alt=""><img src="img/zh-Hant_05.jpg" alt=""><img src="img/zh-Hant_07.jpg" alt=""><img src="img/zh-Hant_08.jpg" alt=""><img src="img/zh-Hant_10.jpg" alt=""></div>
+
+  <h2 data-l="ja">できること</h2><h2 data-l="en">What you can do</h2><h2 data-l="zh">功能</h2>
+  <div class="grid">
+    <a class="card" data-go="calendar" href="features.html#calendar" data-l="ja"><h3>カレンダーとタスク</h3><ul><li>くり返し・何日も続く予定・終日</li><li>六曜・吉日の表示</li><li>締め切りつきのタスクと買い物リスト</li></ul><span class="more">くわしく見る →</span></a>
+    <a class="card" data-go="timetable" href="features.html#timetable" data-l="ja"><h3>時間割と授業</h3><ul><li>学期・講義・時限を自由に設定</li><li>出席の記録と「あと何回休めるか」</li><li>成績と GPA</li></ul><span class="more">くわしく見る →</span></a>
+    <a class="card" data-go="money" href="features.html#money" data-l="ja"><h3>マネー</h3><ul><li>レシートを撮るだけで家計簿</li><li>予算・固定費・月ごとの集計</li><li>アルバイトの給料の見込み</li></ul><span class="more">くわしく見る →</span></a>
+    <a class="card" data-go="notes" href="features.html#notes" data-l="ja"><h3>議事録とノート</h3><ul><li>録音して文字起こし・翻訳</li><li>見出し・チェック・リンク・写真</li><li>A4 の紙のように書いて PDF に</li></ul><span class="more">くわしく見る →</span></a>
+    <a class="card" data-go="passwords" href="features.html#passwords" data-l="ja"><h3>パスワード</h3><ul><li>Face ID・Touch ID でロック</li><li>強いパスワードを作る</li><li>使い回しをお知らせ</li></ul><span class="more">くわしく見る →</span></a>
+    <a class="card" data-go="devices" href="features.html#devices" data-l="ja"><h3>どの端末でも</h3><ul><li>iCloud で iPhone・iPad・Mac が同じに</li><li>ウィジェット・Siri に対応</li><li>使わない機能はオフにできる</li></ul><span class="more">くわしく見る →</span></a>
+
+    <a class="card" data-go="calendar" href="features.html#calendar" data-l="en"><h3>Calendar & Tasks</h3><ul><li>Repeating, multi-day, and all-day events</li><li>Rokuyō and lucky-day labels</li><li>Tasks with due dates and a shopping list</li></ul><span class="more">Learn more →</span></a>
+    <a class="card" data-go="timetable" href="features.html#timetable" data-l="en"><h3>Timetable & Classes</h3><ul><li>Set up terms, courses, and periods</li><li>Attendance and absences left</li><li>Grades and GPA</li></ul><span class="more">Learn more →</span></a>
+    <a class="card" data-go="money" href="features.html#money" data-l="en"><h3>Money</h3><ul><li>Snap receipts to track spending</li><li>Budgets, fixed costs, monthly stats</li><li>Estimated part-time pay</li></ul><span class="more">Learn more →</span></a>
+    <a class="card" data-go="notes" href="features.html#notes" data-l="en"><h3>Meeting Notes & Notes</h3><ul><li>Record, transcribe, and translate</li><li>Headings, checklists, links, photos</li><li>A4-style pages, export to PDF</li></ul><span class="more">Learn more →</span></a>
+    <a class="card" data-go="passwords" href="features.html#passwords" data-l="en"><h3>Passwords</h3><ul><li>Lock with Face ID or Touch ID</li><li>Create strong passwords</li><li>Alerts for reused passwords</li></ul><span class="more">Learn more →</span></a>
+    <a class="card" data-go="devices" href="features.html#devices" data-l="en"><h3>On every device</h3><ul><li>iPhone, iPad, and Mac stay in sync with iCloud</li><li>Widgets and Siri</li><li>Turn off what you don't use</li></ul><span class="more">Learn more →</span></a>
+
+    <a class="card" data-go="calendar" href="features.html#calendar" data-l="zh"><h3>行事曆與待辦事項</h3><ul><li>重複、跨多天與全天行程</li><li>顯示六曜與吉日</li><li>有截止日的待辦事項與購物清單</li></ul><span class="more">看詳細 →</span></a>
+    <a class="card" data-go="timetable" href="features.html#timetable" data-l="zh"><h3>課表與上課</h3><ul><li>自由設定學期、課程與節次</li><li>出席紀錄與「還能缺席幾次」</li><li>成績與 GPA</li></ul><span class="more">看詳細 →</span></a>
+    <a class="card" data-go="money" href="features.html#money" data-l="zh"><h3>金錢</h3><ul><li>拍下收據就能記帳</li><li>預算、固定支出、每月統計</li><li>估算打工薪資</li></ul><span class="more">看詳細 →</span></a>
+    <a class="card" data-go="notes" href="features.html#notes" data-l="zh"><h3>會議紀錄與筆記</h3><ul><li>錄音、轉文字與翻譯</li><li>標題、勾選清單、連結、照片</li><li>像 A4 紙一樣書寫並存成 PDF</li></ul><span class="more">看詳細 →</span></a>
+    <a class="card" data-go="passwords" href="features.html#passwords" data-l="zh"><h3>密碼</h3><ul><li>使用 Face ID、Touch ID 鎖定</li><li>產生強密碼</li><li>提醒重複使用的密碼</li></ul><span class="more">看詳細 →</span></a>
+    <a class="card" data-go="devices" href="features.html#devices" data-l="zh"><h3>在每台裝置上</h3><ul><li>透過 iCloud 讓 iPhone、iPad、Mac 同步</li><li>支援小工具與 Siri</li><li>不用的功能可以關閉</li></ul><span class="more">看詳細 →</span></a>
+  </div>
+
+  <h2 data-l="ja">名前のひみつ</h2><h2 data-l="en">About the name</h2><h2 data-l="zh">名字的由來</h2>
+  <div class="name" data-l="ja">ハワイ語の「Piko（中心）」と「Lā（1日・太陽）」から。<br>あなたの毎日の中心になることを目指しています。</div>
+  <div class="name" data-l="en">From the Hawaiian words "Piko" (center) and "Lā" (day, sun).<br>Pikola aims to be the center of your every day.</div>
+  <div class="name" data-l="zh">來自夏威夷語的「Piko（中心）」與「Lā（一天、太陽）」。<br>希望成為你每一天的中心。</div>
+
+  <h2 data-l="ja">プライバシー</h2><h2 data-l="en">Privacy</h2><h2 data-l="zh">隱私</h2>
+  <p class="lead" data-l="ja">データはあなたの端末と iCloud に保存されます。広告はありません。</p>
+  <p class="lead" data-l="en">Your data stays on your device and in your iCloud. No ads.</p>
+  <p class="lead" data-l="zh">資料儲存在你的裝置與 iCloud 中。沒有廣告。</p>
+</main>
+
+<footer>
+  <a href="support.html">サポート / Support / 支援</a>
+  <a href="privacy.html">プライバシーポリシー / Privacy</a>
+  <a href="terms.html">利用規約 / Terms</a>
+  <div style="margin-top:8px">© 2026 Masashi Fujita ・ <a href="mailto:circle.app@icloud.com">circle.app@icloud.com</a></div>
+</footer>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search).get('lang');
+  var nav=(navigator.language||'').toLowerCase();
+  var l=p||(nav.indexOf('ja')===0?'ja':(nav.indexOf('zh')===0?'zh':'en'));
+  function set(x){
+    document.body.className=x;
+    document.documentElement.lang={ja:'ja',en:'en',zh:'zh-Hant'}[x];
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.set===x)});
+    document.querySelectorAll('a.card').forEach(function(a){a.href='features.html?lang='+x+'#'+a.dataset.go});
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){set(b.dataset.set)}});
+  set(l);
+})();
+</script>
+</body>
+</html>
