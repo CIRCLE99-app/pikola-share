@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pikola – くわしい説明</title>
-<meta name="description" content="Pikola でできること・使い方・ちょっとしたコツ。カレンダーとタスク、時間割と授業、マネー、議事録とノート、パスワード、どの端末でも。">
-<meta property="og:title" content="Pikola – くわしい説明">
-<meta property="og:description" content="Pikola でできること・使い方・ちょっとしたコツ。">
+<title>Pikola – 使い方</title>
+<meta name="description" content="Pikola の使い方。スクロールすると、iPhone の画面で操作の流れが見られます。カレンダーとタスク、時間割と授業、マネー、議事録とノート、パスワード、どの端末でも。">
+<meta property="og:title" content="Pikola – 使い方">
+<meta property="og:description" content="スクロールすると、iPhone の画面で操作の流れが見られます。">
 <meta property="og:image" content="https://circle99-app.github.io/pikola-share/img/ja_01.jpg">
 <meta name="apple-itunes-app" content="app-id=6819705084">
 <link rel="icon" href="icon.png">
 <style>
-:root{--red:#C0393F;--bg:#FBF4F3;--ink:#222;--sub:#6b6b6b}
+:root{--red:#C0393F;--bg:#FBF4F3;--ink:#222;--sub:#6b6b6b;--phone:270px}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Helvetica Neue","PingFang TC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
 a{color:var(--red)}
 .lang{display:flex;justify-content:flex-end;gap:6px;padding:12px 16px 0;max-width:980px;margin:0 auto}
@@ -28,25 +28,41 @@ main{max-width:980px;margin:0 auto;padding:0 16px 48px}
 .nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px 0 8px}
 .nav a{border:1px solid #e5cfcc;background:#fff;border-radius:16px;padding:6px 14px;font-size:14px;text-decoration:none;color:#444}
 .nav a:hover{border-color:var(--red);color:var(--red)}
-.feat{background:#fff;border-radius:18px;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.05);margin-top:24px;scroll-margin-top:16px}
-.feat h2{margin:0 0 4px;font-size:22px;color:var(--red);text-align:left}
-.feat .sum{margin:0 0 12px;color:var(--sub);font-size:15px}
-.feat-body{display:flex;gap:24px;align-items:flex-start}
-.feat-text{flex:1;min-width:0}
-.feat-img{width:220px;aspect-ratio:540/1174;flex:none;border-radius:20px;box-shadow:0 6px 18px rgba(0,0,0,.12);position:sticky;top:16px}
-.feat h3{font-size:16px;margin:18px 0 6px;padding-left:10px;border-left:4px solid var(--red)}
-.feat ul,.feat ol{margin:0;padding-left:1.4em;font-size:15px}
-.feat li{margin:4px 0}
-.dev{background:var(--bg);border-radius:12px;padding:12px 14px;margin-top:18px;font-size:14px}
-.dev strong{display:block;margin-bottom:4px;color:var(--red)}
-.dev ul{font-size:14px}
-.top{display:block;text-align:right;font-size:13px;margin-top:14px}
+.feat{background:#fff;border-radius:18px;padding:20px 20px 8px;box-shadow:0 1px 4px rgba(0,0,0,.05);margin-top:24px;scroll-margin-top:12px}
+.feat h2{margin:0 0 4px;font-size:22px;color:var(--red)}
+.feat .sum{margin:0 0 8px;color:var(--sub);font-size:14px}
+.story{display:grid;grid-template-columns:var(--phone) 1fr;gap:36px;align-items:start}
+.phone-wrap{position:sticky;top:24px}
+.phone{position:relative;width:var(--phone);aspect-ratio:1320/2868;background:#1a1a1a;border-radius:44px;padding:10px;box-shadow:0 14px 34px rgba(0,0,0,.22)}
+.phone::after{content:"";position:absolute;top:17px;left:50%;width:74px;height:22px;margin-left:-37px;background:#000;border-radius:12px;z-index:3}
+.phone .screen{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);object-fit:cover;border-radius:36px;opacity:0;transition:opacity .5s ease;background:#FBF4F3}
+.phone .screen.on{opacity:1}
+.steps{list-style:none;margin:0;padding:12vh 0 18vh}
+.step{scroll-margin-top:33vh;display:flex;gap:12px;align-items:flex-start;min-height:34vh;padding:10px 0;opacity:.38;transition:opacity .3s ease,transform .3s ease;transform:translateX(0)}
+.step.on{opacity:1;transform:translateX(4px)}
+.step .num{flex:none;width:30px;height:30px;border-radius:50%;background:#f1dddb;color:var(--red);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;margin-top:3px;transition:background .3s,color .3s}
+.step.on .num{background:var(--red);color:#fff}
+.step .t{font-size:18px;font-weight:600;line-height:1.5}
+.step .dev{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:var(--red);background:#fbeceb;border-radius:10px;padding:1px 8px}
+.step .sub{display:block;font-size:14px;color:var(--sub);font-weight:400;margin-top:2px}
+.top{display:block;text-align:right;font-size:13px;margin:0 0 8px}
 footer{text-align:center;font-size:13px;color:var(--sub);padding:24px 16px 40px}
 footer a{margin:0 6px}
 @media (max-width:700px){
-  .feat-body{flex-direction:column}
-  .feat-img{order:-1;position:static;width:200px;align-self:center}
-  .feat{padding:16px}
+  :root{--phone:180px}
+  .feat{padding:16px 14px 8px}
+  .story{display:block}
+  .phone-wrap{top:0;z-index:5;background:#fff;padding:6px 0 10px;display:flex;justify-content:center;border-bottom:1px solid #f3e4e2}
+  .phone{border-radius:30px;padding:7px;box-shadow:0 8px 22px rgba(0,0,0,.2)}
+  .phone::after{top:11px;width:50px;height:15px;margin-left:-25px;border-radius:8px}
+  .phone .screen{inset:7px;width:calc(100% - 14px);height:calc(100% - 14px);border-radius:24px}
+  .steps{padding:4vh 0 30vh}
+  .step{min-height:22vh;padding:8px 0}
+  .step .t{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  .phone .screen,.step,.step .num{transition:none}
+  .step.on{transform:none}
 }
 body:not(.ja) [data-l=ja],body:not(.en) [data-l=en],body:not(.zh) [data-l=zh]{display:none!important}
 </style>
@@ -60,10 +76,10 @@ body:not(.ja) [data-l=ja],body:not(.en) [data-l=en],body:not(.zh) [data-l=zh]{di
 
 <section class="hero">
   <img src="icon.png" alt="Pikola">
-  <h1 data-l="ja">Pikola のくわしい説明</h1><h1 data-l="en">Pikola in detail</h1><h1 data-l="zh">Pikola 詳細說明</h1>
-  <p data-l="ja">できること・使い方・ちょっとしたコツを、項目ごとにまとめました。</p>
-  <p data-l="en">What you can do, how to use it, and a few tips, feature by feature.</p>
-  <p data-l="zh">依功能整理了「能做什麼」「怎麼用」與「小技巧」。</p>
+  <h1 data-l="ja">Pikola の使い方</h1><h1 data-l="en">How to use Pikola</h1><h1 data-l="zh">Pikola 使用方法</h1>
+  <p data-l="ja">スクロールすると、iPhone の画面で操作の流れが見られます。</p>
+  <p data-l="en">Scroll down to follow each step on the iPhone screen.</p>
+  <p data-l="zh">往下捲動，就能在 iPhone 畫面上看到操作的流程。</p>
   <a class="back" href="app.html" data-l="ja">← Pikola のページにもどる</a>
   <a class="back" href="app.html" data-l="en">← Back to the Pikola page</a>
   <a class="back" href="app.html" data-l="zh">← 回到 Pikola 頁面</a>
@@ -74,865 +90,99 @@ body:not(.ja) [data-l=ja],body:not(.en) [data-l=en],body:not(.zh) [data-l=zh]{di
   <nav class="nav" data-l="en"><a href="#calendar">Calendar &amp; Tasks</a><a href="#timetable">Timetable &amp; Classes</a><a href="#money">Money</a><a href="#notes">Meeting Notes &amp; Notes</a><a href="#passwords">Passwords</a><a href="#devices">On every device</a></nav>
   <nav class="nav" data-l="zh"><a href="#calendar">行事曆與待辦事項</a><a href="#timetable">課表與上課</a><a href="#money">金錢</a><a href="#notes">會議紀錄與筆記</a><a href="#passwords">密碼</a><a href="#devices">在每台裝置上</a></nav>
 
-  <!-- ===== カレンダーとタスク ===== -->
-  <section class="feat" id="calendar">
-    <div data-l="ja">
-      <h2>カレンダーとタスク</h2>
-      <p class="sum">予定・タスク・買い物リストを、ひとつのカレンダーで。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>できること</h3>
-          <ul>
-            <li>月と週の表示。iPhone は上で「月」「週」「時間割」「タスク」を切りかえます。iPad・Mac は「日」「週」「月」です。</li>
-            <li>くり返しの予定：毎日・毎週・隔週・毎月同日・毎月第N週・N日ごと。直すときや消すときは「この予定のみ」「これ以降」「すべての回」から選べます。</li>
-            <li>終日の予定と、何日も続く予定。終わりの日を別の日にすると、何日も続く予定になります。日・週のタイムラインには 0:00〜24:00 の帯で出ます。</li>
-            <li>場所と地図。名前を入れるほか、地図で検索したり「マップから選択」でピンを刺したりできます。詳細の小さな地図をタップすると、大きな地図と「マップで開く」が使えます。</li>
-            <li>通知：5分前・10分前・15分前・30分前・1時間前。終日の予定は「当日 9:00」です。</li>
-            <li>複製：カレンダーで日付をいくつも選んで、同じ予定を別の日にも作れます。</li>
-            <li>LINE で送る：予定のカード（名前・日時・場所）を LINE に送れます。iCloud の共有で、ほかの人と同じ予定を見ることもできます。</li>
-            <li>写真・PDF から読み取り：案内やチラシの写真から、名前・日付・時刻・場所を読み取って予定にします。</li>
-            <li>六曜・吉日（天赦日・一粒万倍日・神吉日・寅の日・巳の日・己巳の日）・祝日・十干十二支の表示。種類ごとにオン・オフできます。</li>
-            <li>次の予定まで「あと15分」のようなカウントダウン（ホームと週の一覧）。</li>
-            <li>タスク：日付ごとに並びます。名前・カテゴリ・メモを入れ、丸を押すと完了です。</li>
-            <li>集中タイマー：タスクから 25分・50分・60分・90分などで始めます。時間になると通知が来て、「タスクを完了にする」を押せます。</li>
-            <li>買い物リスト（マネーの「リスト」）：品目にレシートからの「前回の値段とお店」が出ます。レシートを保存すると、買ったものに自動でチェックが付きます。</li>
-          </ul>
-          <h3>使い方</h3>
-          <ol>
-            <li>カレンダーの右上「＋ 追加」（iPad・Mac は「＋ 新規予定」）を押すと「新規予定」が開きます。時間の目盛りを長押し（Mac はダブルクリック）すると、その時刻から作れます。</li>
-            <li>予定をタップすると「予定の詳細」が開きます。下に「編集」「複製」「削除」、「LINE で送る」があります。</li>
-            <li>タイムラインの予定を長押しして動かすと、日時が変わります（30分きざみ。長さはそのまま）。</li>
-            <li>「↶ 今日」で今日に戻ります。‹ › で前後に動き、年月の文字を押すと年月を選べます。</li>
-            <li>タスクは、iPhone はカレンダーの「タスク」、iPad・Mac は右の欄です。「＋ 追加」で足し、丸を押すと完了、行を左にスワイプすると「削除」「編集」です。</li>
-          </ol>
-          <h3>ちょっとしたコツ</h3>
-          <ul>
-            <li>読み取りは、予定の編集画面でタイトルの右にあるカメラのアイコンから始めます。</li>
-            <li>新しい予定の通知の初期値は、設定の「通知」→「新しい予定の通知」で決めておけます。</li>
-            <li>買い物リストの項目を長押しすると「予定とつなぐ」が出て、買いに行く予定と結びつけられます。</li>
-          </ul>
-          <div class="dev"><strong>iPhone・iPad・Mac の違い</strong>
-            <ul>
-              <li>iPhone に「日」の切りかえはなく、「月」のカレンダーの下に、その日の時間の目盛りが出ます。</li>
-              <li>Mac は予定をダブルクリックで作り、右クリックのメニューで編集・削除します。「カメラで撮る」はありません。</li>
-              <li>六曜・吉日・祝日は、日本語で使っているときだけ出ます。</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/ja_01.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ 一覧にもどる</a>
+  <!-- カレンダーとタスク -->
+  <section class="feat" id="calendar" data-key="calendar" data-steps="5">
+    <h2><span data-l="ja">カレンダーとタスク</span><span data-l="en">Calendar &amp; Tasks</span><span data-l="zh">行事曆與待辦事項</span></h2>
+    <div class="story">
+      <div class="phone-wrap"><div class="phone"></div></div>
+      <ol class="steps">
+        <li class="step" id="calendar-1" data-step="1"><span class="num">1</span><span class="t"><span data-l="ja">下の「カレンダー」を開く</span><span data-l="en">Open "Calendar" at the bottom</span><span data-l="zh">打開下方的「行事曆」</span><span class="sub"><span data-l="ja">上で「月」「週」「時間割」「タスク」を切りかえ</span><span data-l="en">Switch Month, Week, Timetable, and Tasks at the top</span><span data-l="zh">在上方切換「月」「週」「課表」「待辦事項」</span></span></span></li>
+        <li class="step" id="calendar-2" data-step="2"><span class="num">2</span><span class="t"><span data-l="ja">右上の「＋ 追加」を押す</span><span data-l="en">Tap "+ Add" at the top right</span><span data-l="zh">按右上的「＋ 新增」</span><span class="sub"><span data-l="ja">時間の目盛りを長押ししても作れる</span><span data-l="en">Or long-press the time grid</span><span data-l="zh">長按時間格也能建立</span></span></span></li>
+        <li class="step" id="calendar-3" data-step="3"><span class="num">3</span><span class="t"><span data-l="ja">「終日」をオンにして、始まりと終わりの日を決める</span><span data-l="en">Turn on "All day" and choose the start and end dates</span><span data-l="zh">打開「全天」，選擇開始與結束的日期</span><span class="sub"><span data-l="ja">終わりを別の日にすると、何日も続く予定に</span><span data-l="en">A different end date makes a multi-day event</span><span data-l="zh">結束日改成別天，就成為跨多天的行程</span></span></span></li>
+        <li class="step" id="calendar-4" data-step="4"><span class="num">4</span><span class="t"><span data-l="ja">予定をタップすると「編集」「複製」「LINE で送る」</span><span data-l="en">Tap an event for Edit, Duplicate, and "Send via LINE"</span><span data-l="zh">點行程會出現「編輯」「複製」「用 LINE 傳送」</span><span class="sub"><span data-l="ja">長押しして動かすと日時が変わる</span><span data-l="en">Long-press and drag to move it</span><span data-l="zh">長按拖曳就能改日期時間</span></span></span></li>
+        <li class="step" id="calendar-5" data-step="5"><span class="num">5</span><span class="t"><span data-l="ja">「タスク」で丸を押すと完了</span><span data-l="en">In "Tasks", tap the circle to complete</span><span data-l="zh">在「待辦事項」按圓圈就完成</span><span class="sub"><span data-l="ja">買い物リストはマネーの「リスト」に</span><span data-l="en">The shopping list is under Money → List</span><span data-l="zh">購物清單在「理財」的「清單」</span></span></span></li>
+      </ol>
     </div>
-
-    <div data-l="en">
-      <h2>Calendar &amp; Tasks</h2>
-      <p class="sum">Events, tasks, and your shopping list, all in one calendar.</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>What you can do</h3>
-          <ul>
-            <li>Month and week views. On iPhone, switch between Month, Week, Timetable, and Tasks at the top. iPad and Mac have Day, Week, and Month.</li>
-            <li>Repeating events: daily, weekly, every two weeks, monthly on the same date, monthly on the Nth week, or every N days. When editing or deleting, choose "Change This Event Only", "Change This and Future Events", or "Change All Events".</li>
-            <li>All-day and multi-day events. Set the end date to another day to make a multi-day event. It appears as a 0:00–24:00 band in the day and week timelines.</li>
-            <li>Location and map. Type a name, search the map, or drop a pin with "Choose from Map". Tap the small map in the details to open a larger map and "Open in Maps".</li>
-            <li>Alerts: 5, 10, 15, 30 minutes or 1 hour before. All-day events can alert at "9:00 AM that day".</li>
-            <li>Duplicate: pick as many dates as you like on a calendar to create the same event on other days.</li>
-            <li>Send via LINE: share an event card (title, date and time, place) on LINE. With iCloud sharing, other people can see the same event.</li>
-            <li>Scan from a photo or PDF: read the title, date, time, and place from a flyer or notice and turn it into an event.</li>
-            <li>Rokuyō, lucky days (Tensha, Ichiryū-manbai, Kamiyoshi, Tiger, Snake, Tsuchinoto-mi), Japanese holidays, and sexagenary cycle labels, each switchable on and off.</li>
-            <li>Countdowns like "in 15 min" to your next event (on Home and in the week list).</li>
-            <li>Tasks: listed by day. Enter a title, category, and notes, and tap the circle to complete.</li>
-            <li>Focus timer: start 25, 50, 60, or 90 minutes from a task. You get a notification when time is up, and can tap "Mark Task as Done".</li>
-            <li>Shopping list (under Money → List): each item shows the last price and store from your receipts. Saving a receipt automatically checks off what you bought.</li>
-          </ul>
-          <h3>How to use</h3>
-          <ol>
-            <li>Tap "+ Add" at the top right of the calendar ("+ New Event" on iPad and Mac) to open a new event. Long-press the time grid (double-click on Mac) to create one at that time.</li>
-            <li>Tap an event to open "Event Details", with Edit, Duplicate, Delete, and "Send via LINE" at the bottom.</li>
-            <li>Long-press and drag an event in the timeline to change its time (in 30-minute steps; the length stays the same).</li>
-            <li>"↶ Today" returns to today. Use ‹ › to move back and forth, or tap the month and year to pick one.</li>
-            <li>Tasks are under "Tasks" in the calendar on iPhone, and in the right-hand column on iPad and Mac. Tap "+ Add" to add one, tap the circle to complete it, and swipe a row left for Delete and Edit.</li>
-          </ol>
-          <h3>Tips</h3>
-          <ul>
-            <li>Start a scan from the camera icon to the right of the title in the event editor.</li>
-            <li>Set the default alert for new events in Settings → Notifications → "Alert for new events".</li>
-            <li>Long-press a shopping list item and choose "Link to Event" to tie it to the trip when you will buy it.</li>
-          </ul>
-          <div class="dev"><strong>iPhone, iPad, and Mac</strong>
-            <ul>
-              <li>iPhone has no "Day" view; the day's time grid appears under the month calendar.</li>
-              <li>On Mac, double-click to create an event and use the right-click menu to edit or delete. There is no "Take Photo".</li>
-              <li>Rokuyō, lucky days, and holidays appear only when the app is in Japanese.</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/en_01.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ Back to the list</a>
-    </div>
-
-    <div data-l="zh">
-      <h2>行事曆與待辦事項</h2>
-      <p class="sum">行程、待辦事項與購物清單，都在同一個行事曆裡。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>能做什麼</h3>
-          <ul>
-            <li>月與週的顯示。iPhone 在上方切換「月」「週」「課表」「待辦事項」。iPad、Mac 則有「日」「週」「月」。</li>
-            <li>重複行程：每天、每週、隔週、每月同一天、每月第 N 週、每 N 天。修改或刪除時可選「只變更這一次」「變更這次及之後的行程」「變更所有行程」。</li>
-            <li>全天行程與跨多天的行程。把結束日改成別的日子，就成為跨多天的行程。在日、週的時間軸上會以 0:00～24:00 的長條顯示。</li>
-            <li>地點與地圖。可輸入名稱、用地圖搜尋，或用「從地圖選擇」放置圖釘。點一下詳細頁的小地圖，會打開大地圖與「在地圖中打開」。</li>
-            <li>提醒：5 分鐘前、10 分鐘前、15 分鐘前、30 分鐘前、1 小時前。全天行程為「當天 9:00」。</li>
-            <li>複製：在行事曆上選好幾個日期，就能在別的日子建立同樣的行程。</li>
-            <li>用 LINE 傳送：把行程卡片（名稱、日期時間、地點）傳到 LINE。也能透過 iCloud 共享，和其他人看同一個行程。</li>
-            <li>從照片、PDF 讀取：從傳單或通知的照片讀出名稱、日期、時間、地點，變成行程。</li>
-            <li>顯示六曜、吉日（天赦日、一粒萬倍日、神吉日、寅日、巳日、己巳日）、日本假日、天干地支。每一種都能個別開關。</li>
-            <li>到下一個行程的倒數，例如「還有 15 分鐘」（首頁與週列表）。</li>
-            <li>待辦事項：依日期排列。輸入名稱、分類、備註，按圓圈就完成。</li>
-            <li>專注計時器：從待辦事項開始 25、50、60、90 分鐘等。時間到會通知，並可按「將待辦事項標示為完成」。</li>
-            <li>購物清單（在「理財」分頁的「清單」）：每個品項會顯示收據上的「上次價格與店家」。儲存收據後，買到的東西會自動打勾。</li>
-          </ul>
-          <h3>怎麼用</h3>
-          <ol>
-            <li>按行事曆右上的「＋ 新增」（iPad、Mac 為「＋ 新增行程」）打開「新增行程」。長按時間格（Mac 為連按兩下）就能從那個時間建立。</li>
-            <li>點一下行程會打開「行程詳細資訊」。下方有「編輯」「複製」「刪除」與「用 LINE 傳送」。</li>
-            <li>長按時間軸上的行程並拖曳，就能改日期時間（以 30 分鐘為單位，長度不變）。</li>
-            <li>「↶ 今天」回到今天。用 ‹ › 前後移動，點年月文字可以選擇年月。</li>
-            <li>待辦事項在 iPhone 的行事曆「待辦事項」，在 iPad、Mac 的右側欄。用「＋ 新增」加入，按圓圈完成，把列向左滑有「刪除」「編輯」。</li>
-          </ol>
-          <h3>小技巧</h3>
-          <ul>
-            <li>讀取功能從行程編輯畫面標題右邊的相機圖示開始。</li>
-            <li>新行程的預設提醒可在 設定 →「通知」→「新行程的通知」先決定。</li>
-            <li>長按購物清單的品項會出現「連結行程」，可以和要去買的那個行程綁在一起。</li>
-          </ul>
-          <div class="dev"><strong>iPhone、iPad、Mac 的差異</strong>
-            <ul>
-              <li>iPhone 沒有「日」的切換，「月」的行事曆下方會顯示當天的時間格。</li>
-              <li>Mac 用連按兩下建立行程，用右鍵選單編輯、刪除。沒有「用相機拍攝」。</li>
-              <li>六曜、吉日、假日只在日文介面時顯示。</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/zh-Hant_01.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ 回到列表</a>
-    </div>
+    <a class="top" href="#top"><span data-l="ja">↑ 一覧にもどる</span><span data-l="en">↑ Back to the list</span><span data-l="zh">↑ 回到列表</span></a>
   </section>
 
-  <!-- ===== 時間割と授業 ===== -->
-  <section class="feat" id="timetable">
-    <div data-l="ja">
-      <h2>時間割と授業</h2>
-      <p class="sum">学期・講義・出席・成績を、ひとつの時間割に。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>できること</h3>
-          <ul>
-            <li>学期：名前と始まる日・終わる日を決めます。学期はいくつでも作れて切りかえられます。「祝日は休講にする」もあります。</li>
-            <li>時限の時刻：最初は 9:00 からの6限です。時刻は変えられ、1〜10限にできます。</li>
-            <li>講義：名前・曜日・時限・「◯コマ続き」・教室・キャンパス・先生・色（8色）・メモ・単位数・「欠席は何回まで」。課題も登録できます。</li>
-            <li>出欠：「出席」「遅刻」「欠席」「休講」をワンタップで記録。「第◯回」の番号と出席率が出ます。</li>
-            <li>あと何回休めるか：「欠席は何回まで」から欠席を引いて出します。残りが2回以下になると警告が出て、時間割のマスに赤い点が付きます。</li>
-            <li>振替と補講：「日付を変える」「代わりの日を決める」で、その回の日付や補講の日を決められます。</li>
-            <li>成績と GPA：「秀・優・良・可・不可」「S・A・B・C・F」のほか、自分の付け方（例：A+ ＝ 4.3）も作れます。全部の学期と学期ごとの GPA、取った単位が出ます。</li>
-            <li>時間割の読み取り：「時間割を撮影」で、写真や PDF から講義名・教室・時限を読み取って入れます。</li>
-            <li>授業の写真・資料：板書やプリントを写真で保存し、文字も読み取ります。</li>
-            <li>授業ごとに、ノートと議事録をつなげられます。</li>
-            <li>講義は、カレンダーとホームにも予定と一緒に出ます。</li>
-          </ul>
-          <h3>使い方</h3>
-          <ol>
-            <li>iPhone はカレンダーの上の「時間割」、iPad・Mac は左の「時間割」のカードを押します。</li>
-            <li>空いているマスをタップすると「新しい講義」が開きます。講義のマスをタップすると授業の画面、長押し（Mac は右クリック）で「編集」「削除」です。</li>
-            <li>学期の名前をタップすると、学期の一覧と「新しい学期を追加」「時間割を編集」が出ます。</li>
-            <li>時間割の下の「◯/◯の授業」で、その日の授業に「出席」「遅刻」「欠席」「休講」を付けます。もう一度押すと消えます。</li>
-            <li>右上の「成績」を押すと、GPA と単位の画面が開きます。</li>
-          </ol>
-          <h3>ちょっとしたコツ</h3>
-          <ul>
-            <li>講義の「欠席は何回まで」を決めておくと、残りの回数が分かります。</li>
-            <li>同じ名前の講義（週2回など）は、1つの授業としてまとめて数えます。</li>
-            <li>設定の「授業」で、土曜日・日曜日を時間割に出すかを選べます。</li>
-          </ul>
-          <div class="dev"><strong>iPhone・iPad・Mac の違い</strong>
-            <ul>
-              <li>iPhone は時間割が上に固定され、下のその日の授業だけがスクロールします。</li>
-              <li>iPad は左に時間割、右にその日の授業が並びます。</li>
-              <li>Mac は左に時間割と講義の一覧、右に選んだ講義の詳しいこと（出席率・あと休める回数・課題）が出ます。</li>
-              <li>「カメラで撮る」と録音のボタンは iPhone・iPad だけです。</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/ja_03.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ 一覧にもどる</a>
+  <!-- 時間割と授業 -->
+  <section class="feat" id="timetable" data-key="timetable" data-steps="5">
+    <h2><span data-l="ja">時間割と授業</span><span data-l="en">Timetable &amp; Classes</span><span data-l="zh">課表與上課</span></h2>
+    <div class="story">
+      <div class="phone-wrap"><div class="phone"></div></div>
+      <ol class="steps">
+        <li class="step" id="timetable-1" data-step="1"><span class="num">1</span><span class="t"><span data-l="ja">カレンダーの上の「時間割」を押す</span><span data-l="en">Tap "Timetable" at the top of the calendar</span><span data-l="zh">按行事曆上方的「課表」</span><span class="sub"><span data-l="ja">学期の名前を押すと、学期の切りかえと「時間割を編集」</span><span data-l="en">Tap the term name to switch terms or "Edit Timetable"</span><span data-l="zh">點學期名稱可切換學期或「編輯課表」</span></span></span></li>
+        <li class="step" id="timetable-2" data-step="2"><span class="num">2</span><span class="t"><span data-l="ja">空いているマスをタップして講義を入れる</span><span data-l="en">Tap an empty cell to add a course</span><span data-l="zh">點空的格子加入課程</span><span class="sub"><span data-l="ja">教室・先生・色・単位数・「欠席は何回まで」</span><span data-l="en">Room, teacher, color, credits, and "Absence limit"</span><span data-l="zh">教室、老師、顏色、學分數、「缺席上限」</span></span></span></li>
+        <li class="step" id="timetable-3" data-step="3"><span class="num">3</span><span class="t"><span data-l="ja">下の今日の授業で「出席」「遅刻」「欠席」をワンタップ</span><span data-l="en">One tap for Present, Late, or Absent on today's classes</span><span data-l="zh">在下方今天的課一鍵標記「出席」「遲到」「缺席」</span><span class="sub"><span data-l="ja">もう一度押すと消える。「休講」は前もって付けられる</span><span data-l="en">Tap again to clear. "Canceled" can be set in advance</span><span data-l="zh">再按一次取消。「停課」可以事先標記</span></span></span></li>
+        <li class="step" id="timetable-4" data-step="4"><span class="num">4</span><span class="t"><span data-l="ja">講義をタップすると、出席率と「あと何回休めるか」</span><span data-l="en">Tap a course to see attendance and absences left</span><span data-l="zh">點課程可看出席率與「還能缺席幾次」</span><span class="sub"><span data-l="ja">残り2回以下で、時間割のマスに赤い点</span><span data-l="en">With 2 or fewer left, a red dot shows on the cell</span><span data-l="zh">剩 2 次以下時，課表格子會出現紅點</span></span></span></li>
+        <li class="step" id="timetable-5" data-step="5"><span class="num">5</span><span class="t"><span data-l="ja">右上の「成績」で GPA と取った単位</span><span data-l="en">Tap "Grade" at the top right for GPA and credits</span><span data-l="zh">按右上的「成績」看 GPA 與取得學分</span><span class="sub"><span data-l="ja">秀・優・良・可・不可、S・A・B・C・F、自分の付け方も</span><span data-l="en">Japanese scale, S–F, or your own scale</span><span data-l="zh">秀優良可不可、S–F，或自訂的算法</span></span></span></li>
+      </ol>
     </div>
-
-    <div data-l="en">
-      <h2>Timetable &amp; Classes</h2>
-      <p class="sum">Terms, courses, attendance, and grades in one timetable.</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>What you can do</h3>
-          <ul>
-            <li>Terms: set a name, start date, and end date. Create as many terms as you like and switch between them. There is also "No classes on holidays".</li>
-            <li>Period times: six periods starting at 9:00 by default. Change the times and use 1 to 10 periods.</li>
-            <li>Courses: name, weekday, period, "N periods in a row", room, campus, teacher, color (8 colors), notes, credits, and "Absence limit". You can add assignments too.</li>
-            <li>Attendance: one tap for Present, Late, Absent, or Canceled. Each session is numbered, and an attendance rate is shown.</li>
-            <li>Absences left: calculated from "Absence limit" minus your absences. With 2 or fewer left, a warning appears and a red dot shows on the timetable cell.</li>
-            <li>Rescheduling and make-up classes: "Change date" and "Set make-up date" move a session or add a make-up class.</li>
-            <li>Grades and GPA: Japanese 秀・優・良・可・不可, S・A・B・C・F, or your own scale (for example A+ = 4.3). See the GPA for all terms and per term, plus credits earned.</li>
-            <li>Scan a timetable: "Scan Timetable" reads course names, rooms, and periods from a photo or PDF.</li>
-            <li>Class photos and handouts: save photos of the board or printouts, with the text read out of them.</li>
-            <li>Link notes and meeting notes to each class.</li>
-            <li>Classes also appear in the calendar and on Home, together with your events.</li>
-          </ul>
-          <h3>How to use</h3>
-          <ol>
-            <li>Tap "Timetable" at the top of the calendar on iPhone, or the "Timetable" card on the left on iPad and Mac.</li>
-            <li>Tap an empty cell to open "New Course". Tap a course cell to open the class, or long-press (right-click on Mac) for Edit and Delete.</li>
-            <li>Tap the term name to see your terms, "Add New Semester", and "Edit Timetable".</li>
-            <li>In the list of today's classes under the timetable, tap Present, Late, Absent, or Canceled. Tap again to clear it.</li>
-            <li>Tap "Grade" at the top right to see your GPA and credits.</li>
-          </ol>
-          <h3>Tips</h3>
-          <ul>
-            <li>Set "Absence limit" for each course to see how many you have left.</li>
-            <li>Courses with the same name (for example, twice a week) are counted as one class.</li>
-            <li>Choose whether Saturday and Sunday appear in Settings → Classes.</li>
-          </ul>
-          <div class="dev"><strong>iPhone, iPad, and Mac</strong>
-            <ul>
-              <li>On iPhone the timetable stays at the top and only the day's classes below it scroll.</li>
-              <li>On iPad the timetable is on the left and the day's classes on the right.</li>
-              <li>On Mac the timetable and course list are on the left, and details of the selected course (attendance rate, absences left, assignments) on the right.</li>
-              <li>"Take Photo" and the recording button are iPhone and iPad only.</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/en_03.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ Back to the list</a>
-    </div>
-
-    <div data-l="zh">
-      <h2>課表與上課</h2>
-      <p class="sum">學期、課程、出席與成績，都在同一張課表。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>能做什麼</h3>
-          <ul>
-            <li>學期：設定名稱、開始日與結束日。學期可以建立好幾個並切換。也有「國定假日停課」。</li>
-            <li>節次時間：一開始是從 9:00 起的 6 節。時間可以修改，可設 1～10 節。</li>
-            <li>課程：名稱、星期、節次、「連續 N 節」、教室、校區、老師、顏色（8 色）、備註、學分數、「缺席上限」。也能登記作業。</li>
-            <li>出席：一鍵記錄「出席」「遲到」「缺席」「停課」。會顯示「第 N 次」與出席率。</li>
-            <li>還能缺席幾次：用「缺席上限」減去缺席次數。剩 2 次以下會出現警告，課表格子上會有紅點。</li>
-            <li>調課與補課：用「變更日期」「決定補課日期」調整那一次的日期或補課日。</li>
-            <li>成績與 GPA：有「秀・優・良・可・不可」「S・A・B・C・F」，也能自訂（例如 A+ ＝ 4.3）。會顯示全部學期與各學期的 GPA 和取得學分。</li>
-            <li>課表讀取：用「拍攝課表」從照片或 PDF 讀出課程名、教室、節次並填入。</li>
-            <li>上課照片與講義：把板書或講義拍照保存，並讀出文字。</li>
-            <li>每堂課都能連結筆記與會議記錄。</li>
-            <li>課程也會和行程一起顯示在行事曆與首頁。</li>
-          </ul>
-          <h3>怎麼用</h3>
-          <ol>
-            <li>iPhone 按行事曆上方的「課表」，iPad、Mac 按左側的「課表」卡片。</li>
-            <li>點空的格子會打開「新課程」。點課程的格子會打開上課畫面，長按（Mac 為右鍵）有「編輯」「刪除」。</li>
-            <li>點學期名稱會出現學期列表、「新增學期」「編輯課表」。</li>
-            <li>在課表下方「◯/◯ 的課」為當天的課標記「出席」「遲到」「缺席」「停課」。再按一次就取消。</li>
-            <li>按右上的「成績」會打開 GPA 與學分的畫面。</li>
-          </ol>
-          <h3>小技巧</h3>
-          <ul>
-            <li>先設定課程的「缺席上限」，就能知道還剩幾次。</li>
-            <li>同名的課程（例如一週兩次）會合併成一門課計算。</li>
-            <li>在 設定 →「課程」可以選擇課表是否顯示週六、週日。</li>
-          </ul>
-          <div class="dev"><strong>iPhone、iPad、Mac 的差異</strong>
-            <ul>
-              <li>iPhone 的課表固定在上方，只有下方當天的課會捲動。</li>
-              <li>iPad 左邊是課表，右邊是當天的課。</li>
-              <li>Mac 左邊是課表與課程列表，右邊是選取課程的詳細內容（出席率、還能缺席幾次、作業）。</li>
-              <li>「用相機拍攝」與錄音按鈕只有 iPhone、iPad 有。</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/zh-Hant_03.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ 回到列表</a>
-    </div>
+    <a class="top" href="#top"><span data-l="ja">↑ 一覧にもどる</span><span data-l="en">↑ Back to the list</span><span data-l="zh">↑ 回到列表</span></a>
   </section>
 
-  <!-- ===== マネー ===== -->
-  <section class="feat" id="money">
-    <div data-l="ja">
-      <h2>マネー</h2>
-      <p class="sum">レシートを撮るだけで家計簿。予算・固定費・集計・アルバイトの給料まで。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>できること</h3>
-          <ul>
-            <li>「家計簿」「集計」「リスト」「固定費」の4つの画面があります。</li>
-            <li>レシートの読み取り：「カメラで撮る」「写真から」「ファイルから」（PDF・画像）。お店・日付・品目と値段・値引き・消費税・合計・通貨を端末の中で読み取ります。レシートの写真は保存しません。</li>
-            <li>まとめて読み取り：写真は一度に30枚まで選べ、「まとめて保存」で入ります。</li>
-            <li>手で入力：品目を入れると合計が自動で足されます。</li>
-            <li>品目の分類：食費・外食・日用品・交通・趣味・医療・その他。自分の分類も作れます。一度直すと覚えて、次から自動で付きます。</li>
-            <li>検索：品目名・お店・住所で探せます。品目の平均・最安と、お店ごとの値段が出ます。</li>
-            <li>予算：1か月の予算と分類ごとの予算。使いすぎると赤になります。</li>
-            <li>固定費・サブスク：毎月か毎年、引き落とし日、「あと◯日」。家計簿の合計に入れるかも選べます。</li>
-            <li>集計：月と年。前の期間との差、使ったお金の線グラフ、分類ごとのドーナツグラフ、よく行くお店。</li>
-            <li>外貨：12種類の通貨。レートは自動（インターネット）か手で入れます。</li>
-            <li>CSV の書き出し（設定の「マネー」から）。</li>
-            <li>アルバイトの給料の見込み：時給・交通費・夜の割増・休憩・締め日・給料日を登録すると、カレンダーのシフトから見込みを計算します。</li>
-          </ul>
-          <h3>使い方</h3>
-          <ol>
-            <li>「マネー」の右下「＋ レシート」（iPad の横向き・Mac は上の「新規レシート」）を押します。</li>
-            <li>上の「カメラで撮る」「写真から」「ファイルから」で読み取り、直す所があれば直して「保存」します。</li>
-            <li>カレンダーの日をタップすると、その日のレシートが出ます。左右にスワイプすると月が変わります。</li>
-            <li>レシートをタップすると中身が見られ、「編集」で直せます。左にスワイプ（Mac は右クリック）で「削除」です。</li>
-            <li>「集計」で月・年を切りかえ、「予算を決める」で予算を入れます。</li>
-            <li>アルバイトは、設定の「マネー」で「アルバイト」をオンにしてアルバイト先を登録し、予定の編集画面で「アルバイト」を選びます。</li>
-          </ol>
-          <h3>ちょっとしたコツ</h3>
-          <ul>
-            <li>分類を直すときに「次から『◯◯』は自動でこの分類にする」をオンにしておくと、次から手間がいりません。</li>
-            <li>合計の横の「!」は、品目の合計と合わないという印です。長押し（Mac はマウスを乗せる）で理由が出ます。</li>
-            <li>買い物リストに入れたものは、レシートを保存すると自動でチェックが付きます。</li>
-          </ul>
-          <div class="dev"><strong>iPhone・iPad・Mac の違い</strong>
-            <ul>
-              <li>「カメラで撮る」は iPhone・iPad だけです。Mac は「写真から」「ファイルから」です。</li>
-              <li>iPad の横向きと Mac は、集計・固定費・リストのカード、カレンダー、レシートの3列になります。</li>
-              <li>CSV は iPhone・iPad では共有の画面で渡し、Mac では保存の窓で保存します。</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/ja_05.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ 一覧にもどる</a>
+  <!-- マネー -->
+  <section class="feat" id="money" data-key="money" data-steps="5">
+    <h2><span data-l="ja">マネー</span><span data-l="en">Money</span><span data-l="zh">金錢（理財）</span></h2>
+    <div class="story">
+      <div class="phone-wrap"><div class="phone"></div></div>
+      <ol class="steps">
+        <li class="step" id="money-1" data-step="1"><span class="num">1</span><span class="t"><span data-l="ja">下の「マネー」を開く</span><span data-l="en">Open "Money" at the bottom</span><span data-l="zh">打開下方的「理財」</span><span class="sub"><span data-l="ja">日ごとの金額と、今月の合計</span><span data-l="en">Daily amounts and this month's total</span><span data-l="zh">每天的金額與本月合計</span></span></span></li>
+        <li class="step" id="money-2" data-step="2"><span class="num">2</span><span class="t"><span data-l="ja">「＋ レシート」→ 上の「写真から」「ファイルから」で読み取る</span><span data-l="en">"+ Receipt" → read it with "Photos" or "Files" at the top</span><span data-l="zh">「＋ 收據」→ 用上方的「相片」「檔案」讀取</span><span class="sub"><span data-l="ja">手で入れることもできる</span><span data-l="en">You can also type it in</span><span data-l="zh">也可以手動輸入</span></span><span class="dev" data-l="ja">「カメラで撮る」は iPhone・iPad だけ</span><span class="dev" data-l="en">"Take Photo": iPhone and iPad only</span><span class="dev" data-l="zh">「用相機拍攝」只有 iPhone、iPad 有</span></span></li>
+        <li class="step" id="money-3" data-step="3"><span class="num">3</span><span class="t"><span data-l="ja">レシートをタップすると、品目と分類</span><span data-l="en">Tap a receipt to see items and categories</span><span data-l="zh">點收據可看品項與分類</span><span class="sub"><span data-l="ja">分類は一度直すと、次から自動</span><span data-l="en">Correct a category once and it's automatic next time</span><span data-l="zh">分類改過一次，下次就自動套用</span></span></span></li>
+        <li class="step" id="money-4" data-step="4"><span class="num">4</span><span class="t"><span data-l="ja">「集計」で月の合計とグラフ。「予算を決める」</span><span data-l="en">"Stats" for monthly totals and charts. "Set Budget"</span><span data-l="zh">「統計」看每月合計與圖表。「設定預算」</span><span class="sub"><span data-l="ja">アルバイトの給料の見込みもここに</span><span data-l="en">Estimated part-time pay is here too</span><span data-l="zh">打工薪資估算也在這裡</span></span></span></li>
+        <li class="step" id="money-5" data-step="5"><span class="num">5</span><span class="t"><span data-l="ja">「固定費」でサブスクと引き落とし日</span><span data-l="en">"Fixed Costs" for subscriptions and payment dates</span><span data-l="zh">「固定支出」看訂閱與扣款日</span><span class="sub"><span data-l="ja">家計簿の合計に入れるかも選べる</span><span data-l="en">Choose whether they count toward the total</span><span data-l="zh">可選擇是否計入記帳合計</span></span></span></li>
+      </ol>
     </div>
-
-    <div data-l="en">
-      <h2>Money</h2>
-      <p class="sum">Snap a receipt and it's logged. Budgets, fixed costs, stats, and part-time pay too.</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>What you can do</h3>
-          <ul>
-            <li>Four screens: Expenses, Stats, List, and Fixed Costs.</li>
-            <li>Receipt scanning: "Take Photo", "Photos", or "Files" (PDF or image). The store, date, items and prices, discounts, tax, total, and currency are read on your device. Receipt photos are not stored.</li>
-            <li>Batch scanning: pick up to 30 photos at once and use "Save All".</li>
-            <li>Manual entry: enter items and the total adds up automatically.</li>
-            <li>Item categories: Groceries, Eating Out, Daily Goods, Transport, Hobbies, Medical, and Other, plus your own. Correct one once and it remembers for next time.</li>
-            <li>Search by item, store, or address. See an item's average and lowest price, and prices by store.</li>
-            <li>Budgets: a monthly budget and budgets per category. Overspending turns red.</li>
-            <li>Fixed costs and subscriptions: monthly or yearly, payment date, and "N days left". Choose whether they count toward the ledger total.</li>
-            <li>Stats by month or year: the difference from the previous period, a line chart of spending, a donut chart by category, and your most visited stores.</li>
-            <li>Foreign currency: 12 currencies. Rates are fetched automatically or entered by hand.</li>
-            <li>CSV export (Settings → Money).</li>
-            <li>Estimated part-time pay: enter your hourly wage, transport allowance, night bonus, breaks, cut-off day, and payday, and your shifts on the calendar are turned into an estimate.</li>
-          </ul>
-          <h3>How to use</h3>
-          <ol>
-            <li>Tap "+ Receipt" at the bottom right of Money ("New Receipt" at the top on iPad landscape and Mac).</li>
-            <li>Use "Take Photo", "Photos", or "Files" at the top to scan, fix anything that needs it, and tap Save.</li>
-            <li>Tap a day on the calendar to see that day's receipts. Swipe left or right to change month.</li>
-            <li>Tap a receipt to view it and tap Edit to change it. Swipe left (right-click on Mac) to delete.</li>
-            <li>In Stats, switch between month and year and tap "Set Budget" to enter one.</li>
-            <li>For part-time pay, turn on "Part-Time Job" in Settings → Money, add it under "Workplaces", then choose it under "Part-Time Job" when editing a shift event.</li>
-          </ol>
-          <h3>Tips</h3>
-          <ul>
-            <li>When fixing a category, keep "Use this category for … from now on" turned on so you don't have to do it again.</li>
-            <li>A "!" next to the total means the items don't add up to it. Long-press (hover on Mac) to see why.</li>
-            <li>Items on your shopping list are checked off automatically when you save the receipt.</li>
-          </ul>
-          <div class="dev"><strong>iPhone, iPad, and Mac</strong>
-            <ul>
-              <li>"Take Photo" is iPhone and iPad only. Mac uses "Photos" and "Files".</li>
-              <li>iPad in landscape and Mac show three columns: the Stats, Fixed Costs, and List cards, the calendar, and the receipts.</li>
-              <li>CSV goes through the share sheet on iPhone and iPad, and a Save dialog on Mac.</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/en_05.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ Back to the list</a>
-    </div>
-
-    <div data-l="zh">
-      <h2>金錢（理財）</h2>
-      <p class="sum">拍下收據就能記帳。預算、固定支出、統計、打工薪資也都有。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>能做什麼</h3>
-          <ul>
-            <li>有「記帳」「統計」「清單」「固定支出」四個畫面。</li>
-            <li>收據讀取：「用相機拍攝」「相片」「檔案」（PDF、圖片）。在裝置內讀出店家、日期、品項與價格、折扣、消費稅、合計、幣別。不會保存收據照片。</li>
-            <li>批次讀取：照片一次最多可選 30 張，用「全部儲存」存入。</li>
-            <li>手動輸入：輸入品項後合計會自動加總。</li>
-            <li>品項分類：伙食、外食、日用品、交通、興趣、醫療、其他。也可以自訂分類。改過一次就會記住，之後自動套用。</li>
-            <li>搜尋：可用品項名、店家、地址搜尋。會顯示品項的平均、最低價與各店家的價格。</li>
-            <li>預算：每月預算與各分類的預算。超支會變紅色。</li>
-            <li>固定支出與訂閱：每月或每年、扣款日、「還有 N 天」。也可選擇是否計入記帳合計。</li>
-            <li>統計：月與年。與前一期的差異、支出折線圖、各分類的環形圖、常去的店家。</li>
-            <li>外幣：12 種貨幣。匯率可自動（網路）取得或手動輸入。</li>
-            <li>匯出 CSV（在 設定 →「理財」的「匯出（CSV）」）。</li>
-            <li>打工薪資估算：登記時薪、交通費、夜間加成、休息、結算日、發薪日後，會依行事曆上的班表計算估算值。</li>
-          </ul>
-          <h3>怎麼用</h3>
-          <ol>
-            <li>按「理財」分頁右下的「＋ 收據」（iPad 橫向、Mac 為上方的「新增收據」）。</li>
-            <li>用上方的「用相機拍攝」「相片」「檔案」讀取，有需要就修改，然後「儲存」。</li>
-            <li>點行事曆的日期會顯示那天的收據。左右滑動可以換月份。</li>
-            <li>點收據可看內容，用「編輯」修改。向左滑（Mac 為右鍵）可「刪除」。</li>
-            <li>在「統計」切換月、年，用「設定預算」輸入預算。</li>
-            <li>打工：在 設定 →「理財」打開「打工」並在「打工地點」登記，然後在行程編輯畫面選擇「打工」。</li>
-          </ol>
-          <h3>小技巧</h3>
-          <ul>
-            <li>修改分類時打開「之後『◯◯』自動使用此分類」，下次就不用再改。</li>
-            <li>合計旁的「!」表示與品項合計不符。長按（Mac 為滑鼠移上去）會顯示原因。</li>
-            <li>放進購物清單的東西，儲存收據後會自動打勾。</li>
-          </ul>
-          <div class="dev"><strong>iPhone、iPad、Mac 的差異</strong>
-            <ul>
-              <li>「用相機拍攝」只有 iPhone、iPad 有。Mac 是「相片」「檔案」。</li>
-              <li>iPad 橫向與 Mac 會分成三欄：統計、固定支出、清單的卡片，行事曆，以及收據。</li>
-              <li>CSV 在 iPhone、iPad 透過分享畫面送出，在 Mac 則用儲存視窗存檔。</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/zh-Hant_05.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ 回到列表</a>
-    </div>
+    <a class="top" href="#top"><span data-l="ja">↑ 一覧にもどる</span><span data-l="en">↑ Back to the list</span><span data-l="zh">↑ 回到列表</span></a>
   </section>
 
-  <!-- ===== 議事録とノート ===== -->
-  <section class="feat" id="notes">
-    <div data-l="ja">
-      <h2>議事録とノート</h2>
-      <p class="sum">録音してすぐ文字に。見出しもチェックも写真も、A4 の紙のようなノートに。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>できること</h3>
-          <ul>
-            <li>録音しながら文字起こし：話した言葉がその場で文字になります。端末の中で行い、外には送りません。言語はアプリの言語（日本語・英語・繁体字中国語）です。</li>
-            <li>一時停止・再開・「終了して保存」。保存したあと、録音を聞き直して文字を整え直します。</li>
-            <li>録音しながらノート：書いた行に録音の時間が付き、押すとそこから再生します。</li>
-            <li>音声ファイルから作る：ボイスメモなどの音声を取り込んで文字にします。</li>
-            <li>翻訳：日本語・英語・繁体字中国語に翻訳します（端末の中で）。「元の文」と「翻訳」を切りかえて見られます。</li>
-            <li>時間付きの文：波形と再生のバー。文をタップすると、そこから再生します。</li>
-            <li>編集・検索（名前と全文）・「文字で共有」「PDF で共有」。</li>
-            <li>予定や授業とつなぐ：予定の詳細から録音でき、議事録がその予定に付きます。</li>
-            <li>予定の名前・場所・参加者と、設定の「議事録の単語」を文字起こしに先に教えて、聞き取りをよくします。</li>
-            <li>ノート：太字・見出し・リスト・チェック・リンク・写真。写真の文字も読み取ります。</li>
-            <li>用紙：A4・A3・B5・B4・好きな大きさ、たて・よこ。入りきらない分は自動で次の紙になります。</li>
-            <li>「PDF で書き出す」と共有。</li>
-            <li>フォルダ：議事録とノートで同じフォルダを使い、3段まで作れます（8色）。</li>
-            <li>ノートを授業の日・予定・議事録につなげられます。</li>
-            <li>iCloud で同期します。録音の音声は「音声も同期する」で選べます。</li>
-          </ul>
-          <h3>使い方</h3>
-          <ol>
-            <li>「議事録/ノート」タブの上で「議事録」と「ノート」を切りかえます。</li>
-            <li>「新しい議事録」を押し、「予定を選んで録音」「予定なしで録音」「音声ファイルから作る」から選びます。名前を入れて「録音を始める」です。</li>
-            <li>終わったら「終了して保存」を押します。</li>
-            <li>議事録の画面には「録音を聞く」「共有」「翻訳」「編集」があります。文をタップすると、そこから再生します。</li>
-            <li>「新しいノート」を押すとすぐにノートが開きます。上の道具で太字・見出し・チェックなどを入れ、右上の「…」で「用紙」「PDF で書き出す」「共有」。「完了」で閉じます。</li>
-            <li>一覧の行は、左にスワイプで「削除」、長押し（Mac は右クリック）で「フォルダに移す」です。</li>
-          </ol>
-          <h3>ちょっとしたコツ</h3>
-          <ul>
-            <li>設定の「議事録・ノート」→「議事録の単語」に人の名前や専門用語を入れておくと、聞き取りが良くなります。</li>
-            <li>時間割のその日の授業にあるマイクのボタンから、授業の議事録をすぐ録音できます（今日の授業だけ）。</li>
-            <li>ノートの紙は、指2本で広げたり縮めたりできます。</li>
-            <li>音声の同期は iCloud の容量を使います（1時間でおよそ 30MB）。</li>
-          </ul>
-          <div class="dev"><strong>iPhone・iPad・Mac の違い</strong>
-            <ul>
-              <li>「カメラで撮る」、画面ロック中の録音、ライブアクティビティ、コントロールセンターからの録音は iPhone・iPad だけです。予定の詳細の「議事録を録音」も iPhone・iPad だけです。</li>
-              <li>Mac は左に一覧、右に中身が出ます。翻訳は画面を閉じると止まります。</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/ja_08.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ 一覧にもどる</a>
+  <!-- 議事録とノート -->
+  <section class="feat" id="notes" data-key="notes" data-steps="5">
+    <h2><span data-l="ja">議事録とノート</span><span data-l="en">Meeting Notes &amp; Notes</span><span data-l="zh">會議紀錄與筆記</span></h2>
+    <div class="story">
+      <div class="phone-wrap"><div class="phone"></div></div>
+      <ol class="steps">
+        <li class="step" id="notes-1" data-step="1"><span class="num">1</span><span class="t"><span data-l="ja">「議事録/ノート」→「新しい議事録」</span><span data-l="en">"Minutes/Notes" → "New Meeting Notes"</span><span data-l="zh">「會議記錄/筆記」→「新增會議記錄」</span><span class="sub"><span data-l="ja">予定を選んで録音・予定なしで録音・音声ファイルから作る</span><span data-l="en">Record for an event, without an event, or from an audio file</span><span data-l="zh">選擇行程來錄音、不選行程直接錄音、從音訊檔案建立</span></span></span></li>
+        <li class="step" id="notes-2" data-step="2"><span class="num">2</span><span class="t"><span data-l="ja">名前を入れて「録音を始める」</span><span data-l="en">Enter a title and tap "Start Recording"</span><span data-l="zh">輸入名稱後按「開始錄音」</span><span class="sub"><span data-l="ja">話した言葉がその場で文字に（端末の中だけ）</span><span data-l="en">Speech becomes text on the spot, on your device</span><span data-l="zh">說的話當場變文字（只在裝置內處理）</span></span></span></li>
+        <li class="step" id="notes-3" data-step="3"><span class="num">3</span><span class="t"><span data-l="ja">議事録を開くと「共有」「翻訳」「編集」</span><span data-l="en">Open it for "Share", "Translate", and "Edit"</span><span data-l="zh">打開會議記錄有「共享」「翻譯」「編輯」</span><span class="sub"><span data-l="ja">録音した端末では「録音を聞く」も。文をタップすると、そこから再生</span><span data-l="en">On the device that recorded it, "Play Recording" too. Tap a sentence to play from there</span><span data-l="zh">在錄音的裝置上還有「播放錄音」。點句子就從那裡播放</span></span></span></li>
+        <li class="step" id="notes-4" data-step="4"><span class="num">4</span><span class="t"><span data-l="ja">「ノート」でノートを開く。太字・見出し・チェック・写真</span><span data-l="en">Open a note under "Notes". Bold, headings, checklists, photos</span><span data-l="zh">在「筆記」打開筆記。粗體、標題、勾選、照片</span><span class="sub"><span data-l="ja">「＋ 新しいノート」で作る</span><span data-l="en">Create one with "+ New Note"</span><span data-l="zh">用「＋ 新筆記」建立</span></span><span class="dev" data-l="ja">「カメラで撮る」は iPhone・iPad だけ</span><span class="dev" data-l="en">"Take Photo": iPhone and iPad only</span><span class="dev" data-l="zh">「用相機拍攝」只有 iPhone、iPad 有</span></span></li>
+        <li class="step" id="notes-5" data-step="5"><span class="num">5</span><span class="t"><span data-l="ja">右上の「…」で「用紙」「PDF で書き出す」</span><span data-l="en">The "…" at the top right has "Paper" and "Export as PDF"</span><span data-l="zh">右上的「…」有「紙張」「輸出為 PDF」</span><span class="sub"><span data-l="ja">A4・B5 など。入りきらない分は次の紙に</span><span data-l="en">A4, B5, and more. Overflow goes to the next sheet</span><span data-l="zh">A4、B5 等。放不下的部分到下一張</span></span></span></li>
+      </ol>
     </div>
-
-    <div data-l="en">
-      <h2>Meeting Notes &amp; Notes</h2>
-      <p class="sum">Record and get text right away. Headings, checklists, and photos on A4-style pages.</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>What you can do</h3>
-          <ul>
-            <li>Live transcription while recording: what is said becomes text on the spot. It runs on your device and nothing is sent out. The language follows the app language (Japanese, English, or Traditional Chinese).</li>
-            <li>Pause, Resume, and "Finish and Save". After saving, the recording is listened to again to tidy up the text.</li>
-            <li>Notes while recording: each line gets the recording time, and tapping it plays from there.</li>
-            <li>Create from an audio file: import audio such as a voice memo and turn it into text.</li>
-            <li>Translation into Japanese, English, or Traditional Chinese (on your device). Switch between "Original" and "Translation".</li>
-            <li>Timestamped sentences: a waveform and playback bar. Tap a sentence to play from there.</li>
-            <li>Edit, search (title and full text), "Share as text", and "Share as PDF".</li>
-            <li>Link to events and classes: record from an event's details and the meeting notes stay attached to it.</li>
-            <li>The event's title, place, and attendees, plus your "Meeting Notes Vocabulary" in Settings, are given to the transcriber in advance for better accuracy.</li>
-            <li>Notes: bold, headings, lists, checklists, links, and photos. Text in photos is read too.</li>
-            <li>Paper: A4, A3, B5, B4, or a custom size, portrait or landscape. Overflow moves to the next sheet automatically.</li>
-            <li>"Export as PDF" and share.</li>
-            <li>Folders: shared by meeting notes and notes, up to three levels deep (8 colors).</li>
-            <li>Link a note to a class day, an event, or meeting notes.</li>
-            <li>Syncs with iCloud. Choose whether audio syncs with "Sync audio too".</li>
-          </ul>
-          <h3>How to use</h3>
-          <ol>
-            <li>Switch between "Meeting Notes" and "Notes" at the top of the Minutes/Notes tab.</li>
-            <li>Tap "New Meeting Notes" and choose "Record for an Event", "Record Without an Event", or "Create from an Audio File". Enter a title and tap "Start Recording".</li>
-            <li>When you're done, tap "Finish and Save".</li>
-            <li>The meeting notes screen has "Play Recording", "Sharing", "Translate", and "Edit". Tap a sentence to play from there.</li>
-            <li>Tap "New note" and a note opens right away. Use the tools at the top for bold, headings, checklists, and more, and the "…" at the top right for "Paper", "Export as PDF", and "Share". Tap "Done" to close.</li>
-            <li>In lists, swipe a row left to delete, or long-press (right-click on Mac) for "Move to folder".</li>
-          </ol>
-          <h3>Tips</h3>
-          <ul>
-            <li>Add names and technical terms under Settings → Minutes & Notes → "Meeting Notes Vocabulary" for better transcription.</li>
-            <li>Tap the microphone button on today's class in the timetable to start recording that class right away (today only).</li>
-            <li>Pinch with two fingers to zoom the note paper in and out.</li>
-            <li>Audio sync uses iCloud storage (about 30 MB per hour).</li>
-          </ul>
-          <div class="dev"><strong>iPhone, iPad, and Mac</strong>
-            <ul>
-              <li>"Take a photo", recording while the screen is locked, Live Activities, and recording from Control Center are iPhone and iPad only. So is "Record Meeting Notes" in an event's details.</li>
-              <li>Mac shows the list on the left and the content on the right. Translation stops when the window is closed.</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/en_08.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ Back to the list</a>
-    </div>
-
-    <div data-l="zh">
-      <h2>會議紀錄與筆記</h2>
-      <p class="sum">錄音後馬上變成文字。標題、勾選清單、照片，都放在像 A4 紙一樣的筆記裡。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>能做什麼</h3>
-          <ul>
-            <li>邊錄音邊轉文字：說的話會當場變成文字。在裝置內處理，不會送到外面。語言依 App 的語言（日文、英文、繁體中文）。</li>
-            <li>暫停、繼續、「結束並儲存」。儲存後會重聽錄音，把文字整理得更好。</li>
-            <li>邊錄音邊做筆記：寫下的每一行會附上錄音時間，按一下就從那裡播放。</li>
-            <li>從音訊檔建立：匯入語音備忘錄等音訊並轉成文字。</li>
-            <li>翻譯：可翻成日文、英文、繁體中文（在裝置內）。可切換「原文」與「翻譯」。</li>
-            <li>附時間的句子：有波形與播放列。點句子就從那裡播放。</li>
-            <li>編輯、搜尋（名稱與全文）、「以文字分享」「以 PDF 分享」。</li>
-            <li>與行程、課程連結：可從行程詳細頁錄音，會議記錄會附在那個行程上。</li>
-            <li>會先把行程的名稱、地點、參加者，以及設定裡的「會議記錄的詞彙」告訴轉文字功能，讓辨識更準。</li>
-            <li>筆記：粗體、標題、列表、勾選、連結、照片。也會讀出照片裡的文字。</li>
-            <li>紙張：A4、A3、B5、B4、自訂大小，直向或橫向。放不下的部分會自動到下一張。</li>
-            <li>「匯出 PDF」與分享。</li>
-            <li>資料夾：會議記錄與筆記共用資料夾，最多三層（8 色）。</li>
-            <li>筆記可以連結到上課日、行程、會議記錄。</li>
-            <li>透過 iCloud 同步。錄音的聲音可用「同時同步音訊」選擇。</li>
-          </ul>
-          <h3>怎麼用</h3>
-          <ol>
-            <li>在「會議記錄/筆記」分頁上方切換「會議記錄」與「筆記」。</li>
-            <li>按「新增會議記錄」，從「選擇行程來錄音」「不選行程直接錄音」「從音訊檔案建立」中選擇。輸入名稱後按「開始錄音」。</li>
-            <li>結束時按「結束並儲存」。</li>
-            <li>會議記錄畫面有「播放錄音」「共享」「翻譯」「編輯」。點句子就從那裡播放。</li>
-            <li>按「新筆記」會立刻打開筆記。用上方的工具加入粗體、標題、勾選等，右上的「…」有「紙張」「輸出為 PDF」「共享」。按「完成」關閉。</li>
-            <li>列表中的項目向左滑可「刪除」，長按（Mac 為右鍵）可「移至資料夾」。</li>
-          </ol>
-          <h3>小技巧</h3>
-          <ul>
-            <li>在 設定 →「會議記錄與筆記」→「會議記錄的詞彙」加入人名或專有名詞，辨識會更準。</li>
-            <li>從課表當天課程的麥克風按鈕，可以立刻錄下這堂課的會議記錄（只限今天的課）。</li>
-            <li>筆記的紙張可以用兩指放大或縮小。</li>
-            <li>音訊同步會使用 iCloud 空間（1 小時約 30MB）。</li>
-          </ul>
-          <div class="dev"><strong>iPhone、iPad、Mac 的差異</strong>
-            <ul>
-              <li>「用相機拍」、螢幕鎖定時持續錄音、即時動態、從控制中心錄音，只有 iPhone、iPad 有。行程詳細頁的「錄製會議記錄」也只有 iPhone、iPad 有。</li>
-              <li>Mac 左邊是列表，右邊是內容。關閉視窗後翻譯會停止。</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/zh-Hant_08.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ 回到列表</a>
-    </div>
+    <a class="top" href="#top"><span data-l="ja">↑ 一覧にもどる</span><span data-l="en">↑ Back to the list</span><span data-l="zh">↑ 回到列表</span></a>
   </section>
 
-  <!-- ===== パスワード ===== -->
-  <section class="feat" id="passwords">
-    <div data-l="ja">
-      <h2>パスワード</h2>
-      <p class="sum">銀行や証券のログイン情報を、Face ID・Touch ID のロックの中に。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>できること</h3>
-          <ul>
-            <li>開くたびに Face ID・Touch ID・パスコード（Mac は Touch ID かログインのパスワード）でロックを解きます。ほかの画面に移ると自動でロックされ、アプリの切りかえ画面にも中身は映りません。</li>
-            <li>銀行や証券の口座向けの項目：名前・店番号・口座番号・口座の種類・ログインID・パスワード・暗証番号・URL・メモ。「追加した項目」で自分の項目も足せます（●で隠せます）。</li>
-            <li>強いパスワードを作る：8〜32文字、記号のオン・オフ。見間違えやすい文字（l・I・O・0 など）は使いません。</li>
-            <li>強さの表示：「弱い」「ふつう」「強い」。</li>
-            <li>使い回しのお知らせ：同じパスワードがほかにもあると「!」の印が付き、「ほかの◯件と同じパスワードです」と出ます。</li>
-            <li>コピーしたものは60秒で消えます。iPhone・iPad では、ほかの Apple 機器には渡しません。</li>
-            <li>検索と並べ方（「更新した順」「名前順」）。</li>
-            <li>iCloud キーチェーンに保存し、iPhone・iPad・Mac で同じになります。</li>
-            <li>「パスワードを変えた日」を自動で記録します。</li>
-          </ul>
-          <h3>使い方</h3>
-          <ol>
-            <li>「パスワード」タブ（iPad の横向き・Mac は左の「パスワード」のカード）を開くと、自動で認証が始まります。失敗したら「ロックを解除」を押します。</li>
-            <li>「＋」（Mac は「＋ 追加」）で「新しいパスワード」を開き、入れて「保存」します。</li>
-            <li>行をタップすると詳細が出ます。目のボタンで見せる・隠す、コピーのボタンでコピー、URL を押すとブラウザで開きます。「編集」で直せます。</li>
-            <li>編集画面の鍵のアイコン「パスワードを作る」で、長さと「記号を使う」を決めて「使う」を押します。</li>
-            <li>消すときは、編集画面の「このパスワードを削除」です。</li>
-          </ol>
-          <h3>ちょっとしたコツ</h3>
-          <ul>
-            <li>設定の「パスワード」→「パスワードを使う」をオフにすると、タブを隠せます。データは消えません。</li>
-            <li>削除すると、同期している iPad・Mac からも消えます。</li>
-          </ul>
-          <div class="dev"><strong>iPhone・iPad・Mac の違い</strong>
-            <ul>
-              <li>iPhone は1列で、行を押すと次の画面に進みます。iPad・Mac は左に一覧、右に中身が出ます。</li>
-              <li>Mac の「＋ 追加」は検索欄の右にあります。</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/ja_10.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ 一覧にもどる</a>
+  <!-- パスワード -->
+  <section class="feat" id="passwords" data-key="passwords" data-steps="4">
+    <h2><span data-l="ja">パスワード</span><span data-l="en">Passwords</span><span data-l="zh">密碼</span></h2>
+    <div class="story">
+      <div class="phone-wrap"><div class="phone"></div></div>
+      <ol class="steps">
+        <li class="step" id="passwords-1" data-step="1"><span class="num">1</span><span class="t"><span data-l="ja">「パスワード」を開くと、Face ID・Touch ID で解除</span><span data-l="en">Open "Passwords" and unlock with Face ID or Touch ID</span><span data-l="zh">打開「密碼」，用 Face ID、Touch ID 解鎖</span><span class="sub"><span data-l="ja">ほかの画面に移ると、また自動でロック</span><span data-l="en">It locks again when you leave the screen</span><span data-l="zh">離開畫面會再次自動上鎖</span></span></span></li>
+        <li class="step" id="passwords-2" data-step="2"><span class="num">2</span><span class="t"><span data-l="ja">「＋」で新しいパスワード</span><span data-l="en">Tap "+" for a new password</span><span data-l="zh">按「＋」新增密碼</span><span class="sub"><span data-l="ja">名前・店番号・口座番号・ログインID・URL・メモ</span><span data-l="en">Name, branch, account number, login ID, URL, notes</span><span data-l="zh">名稱、分行代號、帳號、登入 ID、URL、備註</span></span></span></li>
+        <li class="step" id="passwords-3" data-step="3"><span class="num">3</span><span class="t"><span data-l="ja">鍵のアイコンで、強いパスワードを作る</span><span data-l="en">Tap the key icon to generate a strong password</span><span data-l="zh">按鑰匙圖示產生強密碼</span><span class="sub"><span data-l="ja">8〜32文字、記号のオン・オフ</span><span data-l="en">8 to 32 characters, symbols on or off</span><span data-l="zh">8～32 字，符號可開關</span></span></span></li>
+        <li class="step" id="passwords-4" data-step="4"><span class="num">4</span><span class="t"><span data-l="ja">行をタップ。目のボタンで見せる、コピーは60秒で消える</span><span data-l="en">Tap a row. The eye shows it; copies clear after 60 seconds</span><span data-l="zh">點一列。眼睛按鈕可顯示，複製 60 秒後清除</span><span class="sub"><span data-l="ja">同じパスワードがほかにあると「!」でお知らせ</span><span data-l="en">A "!" warns when a password is reused</span><span data-l="zh">密碼重複使用時會以「!」提醒</span></span></span></li>
+      </ol>
     </div>
-
-    <div data-l="en">
-      <h2>Passwords</h2>
-      <p class="sum">Keep bank and brokerage logins behind Face ID or Touch ID.</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>What you can do</h3>
-          <ul>
-            <li>Unlock with Face ID, Touch ID, or your passcode every time you open it (Touch ID or your login password on Mac). It locks again when you leave the screen, and nothing shows in the app switcher.</li>
-            <li>Fields made for bank and brokerage accounts: name, branch number, account number, account type, login ID, password, PIN, URL, and notes. Add your own fields under "Custom Fields" (they can be masked with ●).</li>
-            <li>Generate strong passwords: 8 to 32 characters, symbols on or off. Easily confused characters (l, I, O, 0, and so on) are never used.</li>
-            <li>Strength shown as Weak, Fair, or Strong.</li>
-            <li>Reuse alerts: if the same password is used elsewhere, a "!" appears and "Same password as N other entries" is shown.</li>
-            <li>Copied values are cleared after 60 seconds. On iPhone and iPad they are not handed off to other Apple devices.</li>
-            <li>Search and sort ("Recently updated" or "By name").</li>
-            <li>Stored in iCloud Keychain, so iPhone, iPad, and Mac stay the same.</li>
-            <li>The date you last changed a password is recorded automatically.</li>
-          </ul>
-          <h3>How to use</h3>
-          <ol>
-            <li>Open the Passwords tab (the "Passwords" card on the left on iPad landscape and Mac) and authentication starts automatically. If it fails, tap "Unlock".</li>
-            <li>Tap "+" ("+ Add" on Mac) to open "New Password", fill it in, and tap Save.</li>
-            <li>Tap a row to see the details. Use the eye button to show or hide, the copy button to copy, and tap the URL to open it in your browser. Tap Edit to change it.</li>
-            <li>In the editor, tap the key icon "Generate Password", choose the length and "Use symbols", then tap "Use".</li>
-            <li>To delete, use "Delete This Password" in the editor.</li>
-          </ol>
-          <h3>Tips</h3>
-          <ul>
-            <li>Turn off "Use Passwords" under Settings → Passwords to hide the tab. Your data is kept.</li>
-            <li>Deleting removes the entry from your synced iPad and Mac as well.</li>
-          </ul>
-          <div class="dev"><strong>iPhone, iPad, and Mac</strong>
-            <ul>
-              <li>iPhone is a single column; tap a row to go to the next screen. iPad and Mac show the list on the left and the details on the right.</li>
-              <li>On Mac, "+ Add" is to the right of the search field.</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/en_10.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ Back to the list</a>
-    </div>
-
-    <div data-l="zh">
-      <h2>密碼</h2>
-      <p class="sum">把銀行、證券的登入資料，放在 Face ID、Touch ID 的鎖裡。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>能做什麼</h3>
-          <ul>
-            <li>每次打開都用 Face ID、Touch ID 或密碼解鎖（Mac 為 Touch ID 或登入密碼）。離開畫面會自動上鎖，App 切換畫面也看不到內容。</li>
-            <li>為銀行、證券帳戶設計的欄位：名稱、分行代號、帳號、帳戶種類、登入 ID、密碼、PIN、URL、備註。可用「自訂項目」加自己的欄位（可用 ● 隱藏）。</li>
-            <li>產生強密碼：8～32 字，符號可開關。不使用容易看錯的字（l、I、O、0 等）。</li>
-            <li>強度顯示：「弱」「普通」「強」。</li>
-            <li>重複使用提醒：若有其他項目用同一個密碼，會出現「!」，並顯示「與其他 N 筆相同的密碼」。</li>
-            <li>複製的內容 60 秒後會清除。在 iPhone、iPad 不會傳到其他 Apple 裝置。</li>
-            <li>搜尋與排序（「依更新時間」「依名稱」）。</li>
-            <li>保存在 iCloud 鑰匙圈，iPhone、iPad、Mac 都一樣。</li>
-            <li>自動記錄「更改密碼的日期」。</li>
-          </ul>
-          <h3>怎麼用</h3>
-          <ol>
-            <li>打開「密碼」分頁（iPad 橫向、Mac 為左側的「密碼」卡片），就會自動開始驗證。失敗時按「解鎖」。</li>
-            <li>按「＋」（Mac 為「＋ 新增」）打開「新密碼」，填好後按「儲存」。</li>
-            <li>點一列會顯示詳細內容。用眼睛按鈕顯示或隱藏，用複製按鈕複製，按 URL 會用瀏覽器打開。用「編輯」修改。</li>
-            <li>在編輯畫面按鑰匙圖示「產生密碼」，決定長度與「使用符號」後按「使用」。</li>
-            <li>要刪除時，用編輯畫面的「刪除這組密碼」。</li>
-          </ol>
-          <h3>小技巧</h3>
-          <ul>
-            <li>把 設定 →「密碼」→「使用密碼」關掉，可以隱藏分頁。資料不會消失。</li>
-            <li>刪除後，同步中的 iPad、Mac 也會一起刪除。</li>
-          </ul>
-          <div class="dev"><strong>iPhone、iPad、Mac 的差異</strong>
-            <ul>
-              <li>iPhone 是單欄，點一列會進到下一頁。iPad、Mac 左邊是列表，右邊是內容。</li>
-              <li>Mac 的「＋ 新增」在搜尋欄的右邊。</li>
-            </ul>
-          </div>
-        </div>
-        <img class="feat-img" src="img/zh-Hant_10.jpg" alt="">
-      </div>
-      <a class="top" href="#top">↑ 回到列表</a>
-    </div>
+    <a class="top" href="#top"><span data-l="ja">↑ 一覧にもどる</span><span data-l="en">↑ Back to the list</span><span data-l="zh">↑ 回到列表</span></a>
   </section>
 
-  <!-- ===== どの端末でも ===== -->
-  <section class="feat" id="devices">
-    <div data-l="ja">
-      <h2>どの端末でも</h2>
-      <p class="sum">iCloud で iPhone・iPad・Mac が同じに。ウィジェット・Siri・振り返りも。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>できること</h3>
-          <ul>
-            <li>iCloud で、予定・タスク・時間割・レシート・議事録・ノートが iPhone・iPad・Mac で同じになります。パスワードは iCloud キーチェーンで同じになります。</li>
-            <li>ウィジェット「今日の予定」：今日の予定と、次の予定まで「あと◯分」。小・中・大があり、iPhone・iPad はロック画面にも置けます。</li>
-            <li>iPhone・iPad だけ：「クイック操作」のウィジェットとロック画面の丸いウィジェット（録音・レシート・予定の追加・ToDo の追加・今月の支出）。コントロールセンターの「議事録の録音」「レシートを撮る」「予定を追加」「ToDoを追加」は、ロック画面の下やアクションボタンにも置けます。</li>
-            <li>ライブアクティビティ（iPhone・iPad）：進行中の予定の残り時間と次の予定、録音中の経過時間を Dynamic Island とロック画面に出します。</li>
-            <li>Siri・ショートカット（iPhone・iPad）：「Pikolaで今日の予定は？」「Pikolaで今月いくら使った？」など。予定の追加・タスクの追加・録音・レシートの記録・予算の残りもできます。</li>
-            <li>Spotlight（iPhone・iPad）：予定とタスクを iPhone の検索から探せます。</li>
-            <li>振り返り：週と月で、できたタスク・集中した時間・授業の出席率・使ったお金・アルバイト・予定の数を見ます。「カードで共有」で画像（4:5 と 9:16）にできます。今日の予定もカードにできます。</li>
-            <li>使わない機能はオフにできます：マネー・議事録/ノート・パスワード・時間割・アルバイト。データは消えません。</li>
-            <li>言語：日本語・English・繁體中文。</li>
-            <li>プロフィールのアイコン画像とヘッダー画像。</li>
-            <li>「すべてのデータを消す」（iCloud とほかの端末の分も消えます）。</li>
-          </ul>
-          <h3>使い方</h3>
-          <ol>
-            <li>設定を開く：iPhone はホームの日付のカードの右の歯車、iPad は「設定」タブか左の「設定」カード、Mac は ⌘, か左の欄のいちばん下の「設定」です。</li>
-            <li>機能のオン・オフは、設定のそれぞれのまとまりのいちばん上です（「マネーを使う」「議事録/ノートを使う」「パスワードを使う」「時間割を使う」「アルバイト」）。</li>
-            <li>ウィジェットは、ホーム画面を長押しして追加から Pikola を選びます。コントロールセンターは、コントロールセンターの編集から足します。</li>
-            <li>振り返りは、iPhone はホームの日付のカードの左の丸いボタン、iPad・Mac は「振り返り」ボタンです。</li>
-            <li>言語は、設定の「その他」→「言語」から、端末の設定で変えます。</li>
-          </ol>
-          <h3>ちょっとしたコツ</h3>
-          <ul>
-            <li>設定の「通知」→「振り返りの通知」をオンにすると、毎週日曜の夜8時と毎月1日の朝9時に知らせます。</li>
-            <li>六曜・吉日・祝日は、日本語で使っているときだけ出ます（設定の「カレンダーと表示」）。</li>
-            <li>オフにした機能をウィジェットや Siri から呼ぶと、「オンにする」ボタンが出てすぐ戻せます。</li>
-          </ul>
-          <div class="dev"><strong>iPhone・iPad・Mac の違い</strong>
-            <ul>
-              <li>Mac のウィジェットは小・中・大だけです。Siri・ライブアクティビティ・コントロールセンター・Spotlight は iPhone・iPad だけです。</li>
-              <li>iPad の横向きと Mac は、下のタブがなく、左のカード（カレンダー・時間割・議事録/ノート・マネー・パスワード）で切りかえます。</li>
-              <li>Mac の設定は別のウインドウで開きます。</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <a class="top" href="#top">↑ 一覧にもどる</a>
+  <!-- どの端末でも -->
+  <section class="feat" id="devices" data-key="devices" data-steps="4">
+    <h2><span data-l="ja">どの端末でも</span><span data-l="en">On every device</span><span data-l="zh">在每台裝置上</span></h2>
+    <p class="sum"><span data-l="ja">iCloud で iPhone・iPad・Mac が同じに。ウィジェット・Siri・コントロールセンターは iPhone・iPad だけ。</span><span data-l="en">iPhone, iPad, and Mac stay in sync with iCloud. Widgets, Siri, and Control Center are iPhone and iPad only.</span><span data-l="zh">透過 iCloud 讓 iPhone、iPad、Mac 同步。小工具、Siri、控制中心只有 iPhone、iPad 有。</span></p>
+    <div class="story">
+      <div class="phone-wrap"><div class="phone"></div></div>
+      <ol class="steps">
+        <li class="step" id="devices-1" data-step="1"><span class="num">1</span><span class="t"><span data-l="ja">ホームの歯車で設定を開く</span><span data-l="en">Tap the gear on Home to open Settings</span><span data-l="zh">按首頁的齒輪打開設定</span><span class="dev" data-l="ja">iPad は「設定」タブ、Mac は ⌘,</span><span class="dev" data-l="en">iPad: Settings tab. Mac: ⌘,</span><span class="dev" data-l="zh">iPad 用「設定」分頁，Mac 用 ⌘,</span></span></li>
+        <li class="step" id="devices-2" data-step="2"><span class="num">2</span><span class="t"><span data-l="ja">「マネーを使う」などをオフにすると、そのタブが隠れる</span><span data-l="en">Turn off "Use Money" and the like to hide that tab</span><span data-l="zh">關掉「使用理財」等，就會隱藏那個分頁</span><span class="sub"><span data-l="ja">データは消えない。設定は iCloud でほかの端末にも</span><span data-l="en">Your data is kept. The setting syncs via iCloud</span><span data-l="zh">資料不會消失。設定會透過 iCloud 同步</span></span></span></li>
+        <li class="step" id="devices-3" data-step="3"><span class="num">3</span><span class="t"><span data-l="ja">ホームの左の丸いボタンで「振り返り」</span><span data-l="en">The round button on the left of Home opens "Review"</span><span data-l="zh">首頁左邊的圓形按鈕打開「回顧」</span><span class="sub"><span data-l="ja">できたタスク・出席率・使ったお金を週と月で</span><span data-l="en">Tasks done, attendance, and spending by week or month</span><span data-l="zh">以週或月查看完成的待辦、出席率、支出</span></span></span></li>
+        <li class="step" id="devices-4" data-step="4"><span class="num">4</span><span class="t"><span data-l="ja">「カードで共有」で画像にして送る</span><span data-l="en">"Share as Card" turns it into an image to send</span><span data-l="zh">用「以卡片分享」做成圖片傳送</span><span class="sub"><span data-l="ja">金額・場所・人の名前はカードに出ない</span><span data-l="en">Amounts, places, and names are left off the card</span><span data-l="zh">金額、地點、人名不會出現在卡片上</span></span></span></li>
+      </ol>
     </div>
-
-    <div data-l="en">
-      <h2>On every device</h2>
-      <p class="sum">iPhone, iPad, and Mac stay in sync with iCloud. Widgets, Siri, and reviews too.</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>What you can do</h3>
-          <ul>
-            <li>With iCloud, your events, tasks, timetable, receipts, meeting notes, and notes are the same on iPhone, iPad, and Mac. Passwords sync through iCloud Keychain.</li>
-            <li>"Today's Events" widget: today's events and "N min" until the next one. Small, medium, and large, plus the Lock Screen on iPhone and iPad.</li>
-            <li>iPhone and iPad only: a "Quick Actions" widget and round Lock Screen widgets (record, receipt, add event, add to-do, this month's spending). The Control Center controls "Meeting Notes Recording", "Scan a Receipt", "Add Event", and "Add To-Do" can also go on the Lock Screen and the Action button.</li>
-            <li>Live Activities (iPhone and iPad): the time left in the current event and the next one, and the elapsed time while recording, in the Dynamic Island and on the Lock Screen.</li>
-            <li>Siri and Shortcuts (iPhone and iPad): "What's on today in Pikola?", "How much did I spend this month in Pikola?", and more. Add events, add tasks, record, log receipts, and check your remaining budget.</li>
-            <li>Spotlight (iPhone and iPad): find your events and tasks from the iPhone search.</li>
-            <li>Review: by week or month, see tasks done, focus time, class attendance, spending, part-time pay, and the number of events. "Share as Card" makes an image (4:5 or 9:16). Today's events can be a card too.</li>
-            <li>Turn off what you don't use: Money, Minutes/Notes, Passwords, Timetable, Part-Time Job. Your data is kept.</li>
-            <li>Languages: 日本語, English, 繁體中文.</li>
-            <li>Profile icon and header image.</li>
-            <li>"Erase All Data" (also removes it from iCloud and your other devices).</li>
-          </ul>
-          <h3>How to use</h3>
-          <ol>
-            <li>Open Settings: the gear on the right of the date card on Home on iPhone, the Settings tab or the "Settings" card on the left on iPad, and ⌘, or "Settings" at the bottom of the left column on Mac.</li>
-            <li>Each feature's on/off switch is at the top of its section in Settings ("Use Money", "Use Minutes/Notes", "Use Passwords", "Use timetable", "Part-Time Job").</li>
-            <li>For widgets, long-press your Home Screen, tap add, and choose Pikola. For Control Center, add them from its edit mode.</li>
-            <li>For Review, tap the round button to the left of the date card on Home on iPhone, or the "Review" button on iPad and Mac.</li>
-            <li>Change the language from Settings → Other → Language, which takes you to the device settings.</li>
-          </ol>
-          <h3>Tips</h3>
-          <ul>
-            <li>Turn on "Review notifications" under Settings → Notifications to be reminded every Sunday at 8 pm and on the 1st of each month at 9 am.</li>
-            <li>Rokuyō, lucky days, and holidays appear only when the app is in Japanese (Settings → Calendar &amp; Display).</li>
-            <li>If you call a feature you turned off from a widget or Siri, a "Turn On" button appears so you can bring it back right away.</li>
-          </ul>
-          <div class="dev"><strong>iPhone, iPad, and Mac</strong>
-            <ul>
-              <li>Mac widgets come in small, medium, and large only. Siri, Live Activities, Control Center, and Spotlight are iPhone and iPad only.</li>
-              <li>iPad in landscape and Mac have no bottom tabs; switch with the cards on the left (Calendar, Timetable, Minutes/Notes, Money, Passwords).</li>
-              <li>On Mac, Settings opens in a separate window.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <a class="top" href="#top">↑ Back to the list</a>
-    </div>
-
-    <div data-l="zh">
-      <h2>在每台裝置上</h2>
-      <p class="sum">透過 iCloud 讓 iPhone、iPad、Mac 同步。也有小工具、Siri 與回顧。</p>
-      <div class="feat-body">
-        <div class="feat-text">
-          <h3>能做什麼</h3>
-          <ul>
-            <li>透過 iCloud，行程、待辦事項、課表、收據、會議記錄、筆記在 iPhone、iPad、Mac 都一樣。密碼透過 iCloud 鑰匙圈同步。</li>
-            <li>小工具「今天的行程」：今天的行程，以及到下一個行程「還有 N 分鐘」。有小、中、大，iPhone、iPad 也能放在鎖定畫面。</li>
-            <li>只有 iPhone、iPad：「快速操作」小工具與鎖定畫面的圓形小工具（錄音、收據、新增行程、新增待辦事項、本月支出）。控制中心的「會議記錄錄音」「拍收據」「新增行程」「新增待辦事項」也能放在鎖定畫面下方與動作按鈕。</li>
-            <li>即時動態（iPhone、iPad）：在動態島與鎖定畫面顯示進行中行程的剩餘時間與下一個行程，以及錄音中的經過時間。</li>
-            <li>Siri 與捷徑（iPhone、iPad）：「用 Pikola 看今天的行程」「用 Pikola 看這個月花了多少」等。也能新增行程、新增待辦事項、錄音、記錄收據、查剩餘預算。</li>
-            <li>Spotlight（iPhone、iPad）：可從 iPhone 的搜尋找到行程與待辦事項。</li>
-            <li>回顧：以週或月查看完成的待辦、專注時間、上課出席率、支出、打工、行程數。用「以卡片分享」做成圖片（4:5 與 9:16）。今天的行程也能做成卡片。</li>
-            <li>不用的功能可以關閉：理財、會議記錄/筆記、密碼、課表、打工。資料不會消失。</li>
-            <li>語言：日本語、English、繁體中文。</li>
-            <li>個人檔案的頭像與標題圖片。</li>
-            <li>「清除所有資料」（iCloud 與其他裝置的資料也會一起清除）。</li>
-          </ul>
-          <h3>怎麼用</h3>
-          <ol>
-            <li>打開設定：iPhone 按首頁日期卡片右邊的齒輪，iPad 用「設定」分頁或左側的「設定」卡片，Mac 用 ⌘, 或左欄最下方的「設定」。</li>
-            <li>功能的開關在設定裡各區塊的最上方（「使用理財」「使用會議記錄/筆記」「使用密碼」「使用課表」「打工」）。</li>
-            <li>小工具：長按主畫面，從新增中選 Pikola。控制中心則從控制中心的編輯中加入。</li>
-            <li>回顧：iPhone 按首頁日期卡片左邊的圓形按鈕，iPad、Mac 按「回顧」按鈕。</li>
-            <li>語言：從 設定 →「其他」→「語言」，到裝置的設定中更改。</li>
-          </ol>
-          <h3>小技巧</h3>
-          <ul>
-            <li>打開 設定 →「通知」→「回顧通知」，每週日晚上 8 點與每月 1 日早上 9 點會提醒。</li>
-            <li>六曜、吉日、假日只在日文介面時顯示（設定的「行事曆與顯示」）。</li>
-            <li>從小工具或 Siri 呼叫已關閉的功能時，會出現「開啟」按鈕，可以馬上恢復。</li>
-          </ul>
-          <div class="dev"><strong>iPhone、iPad、Mac 的差異</strong>
-            <ul>
-              <li>Mac 的小工具只有小、中、大。Siri、即時動態、控制中心、Spotlight 只有 iPhone、iPad 有。</li>
-              <li>iPad 橫向與 Mac 沒有下方分頁，用左側的卡片（行事曆、課表、會議記錄/筆記、理財、密碼）切換。</li>
-              <li>Mac 的設定會在另一個視窗打開。</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <a class="top" href="#top">↑ 回到列表</a>
-    </div>
+    <a class="top" href="#top"><span data-l="ja">↑ 一覧にもどる</span><span data-l="en">↑ Back to the list</span><span data-l="zh">↑ 回到列表</span></a>
   </section>
 </main>
 
@@ -949,16 +199,55 @@ body:not(.ja) [data-l=ja],body:not(.en) [data-l=en],body:not(.zh) [data-l=zh]{di
   var p=new URLSearchParams(location.search).get('lang');
   var nav=(navigator.language||'').toLowerCase();
   var l=p||(nav.indexOf('ja')===0?'ja':(nav.indexOf('zh')===0?'zh':'en'));
+  var code={ja:'ja',en:'en',zh:'zh-Hant'};
+  var feats=[].slice.call(document.querySelectorAll('.feat'));
+  // 各項目の iPhone の中に、手順の数だけ写真を置く（言葉ごとに写真を変える）
+  feats.forEach(function(f){
+    var n=parseInt(f.dataset.steps,10),phone=f.querySelector('.phone');
+    for(var i=1;i<=n;i++){var im=document.createElement('img');im.className='screen'+(i===1?' on':'');im.dataset.step=i;im.alt='';if(i>1)im.loading='lazy';phone.appendChild(im)}
+    f.dataset.active='1';
+  });
+  function setImages(x){
+    feats.forEach(function(f){
+      f.querySelectorAll('.screen').forEach(function(im){im.src='img/steps/'+code[x]+'_'+f.dataset.key+'_'+im.dataset.step+'.jpg'});
+    });
+  }
   function set(x){
     document.body.className=x;
-    document.documentElement.lang={ja:'ja',en:'en',zh:'zh-Hant'}[x];
+    document.documentElement.lang=code[x];
     document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.set===x)});
     document.querySelectorAll('a.back').forEach(function(a){a.href='app.html?lang='+x});
+    setImages(x);
   }
   document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){set(b.dataset.set)}});
   set(l);
+  // スクロールして手順が真ん中に来たら、iPhone の中の写真を切りかえる
+  var narrow=window.matchMedia('(max-width:700px)');
+  function update(){
+    var vh=window.innerHeight;
+    feats.forEach(function(f){
+      var r=f.getBoundingClientRect();
+      if(r.bottom<0||r.top>vh) return;
+      var focus=vh/2;
+      if(narrow.matches){var pr=f.querySelector('.phone-wrap').getBoundingClientRect();focus=(Math.max(pr.bottom,0)+vh)/2}
+      var best=null,bd=1e9;
+      f.querySelectorAll('.step').forEach(function(s){var sr=s.getBoundingClientRect();var d=Math.abs((sr.top+sr.bottom)/2-focus);if(d<bd){bd=d;best=s}});
+      if(!best) return;
+      var k=best.dataset.step;
+      if(f.dataset.active===k) return;
+      f.dataset.active=k;
+      f.querySelectorAll('.step').forEach(function(s){s.classList.toggle('on',s.dataset.step===k)});
+      f.querySelectorAll('.screen').forEach(function(im){im.classList.toggle('on',im.dataset.step===k)});
+    });
+  }
+  var ticking=false;
+  function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(function(){update();ticking=false})}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  feats.forEach(function(f){f.querySelectorAll('.step').forEach(function(s,i){if(i===0)s.classList.add('on')})});
   function jump(){if(location.hash){var t=document.querySelector(location.hash);if(t){t.scrollIntoView({behavior:'instant',block:'start'})}}}
-  jump();window.addEventListener('load',jump);
+  jump();window.addEventListener('load',function(){jump();update()});
+  update();
 })();
 </script>
 </body>
