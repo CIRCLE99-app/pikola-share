@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pikola の予定を送る</title>
+  <title>Pikola の予定・旅行を送る</title>
   <style>
     body {
       margin: 0;
@@ -43,12 +43,18 @@
       detailEl.textContent = detail || "";
     }
 
-    // URL のパラメーター：t = 予定の名前、d = 日時の文字、p = 場所、u = 開くための URL
+    // URL のパラメーター：t = 名前、d = 日時（旅行は期間）の文字、p = 場所（旅行は行き先）、u = 開くための URL、k = "trip" なら旅行のカード（なければ予定）
     const params = new URLSearchParams(location.search);
     const title = (params.get("t") || "").trim();
     const dateText = (params.get("d") || "").trim();
     const place = (params.get("p") || "").trim();
     const openURL = (params.get("u") || "").trim();
+    const isTrip = (params.get("k") || "").trim() === "trip";
+    // 予定と旅行で変わる言葉（カードの見出し・行の名前・送ったときの短い文）
+    const words = isTrip
+      ? { kind: "旅行", dateLabel: "期間", placeLabel: "行き先" }
+      : { kind: "予定", dateLabel: "日時", placeLabel: "場所" };
+    document.title = "Pikola の" + words.kind + "を送る";
 
     // 開く URL の最後に openExternalBrowser=1 をつける（LINE の中ではなく Safari で開くため）
     function externalURL(url) {
@@ -71,8 +77,8 @@
 
     // 送るカード（Flex Message）
     function buildMessage() {
-      const bodyRows = [row("日時", dateText || "未定")];
-      if (place) bodyRows.push(row("場所", place));
+      const bodyRows = [row(words.dateLabel, dateText || "未定")];
+      if (place) bodyRows.push(row(words.placeLabel, place));
 
       const bubble = {
         type: "bubble",
@@ -84,7 +90,7 @@
           paddingBottom: "8px",
           contents: [
             { type: "image", url: ICON_URL, size: "xs", aspectRatio: "1:1", aspectMode: "cover", flex: 0 },
-            { type: "text", text: title || "予定", weight: "bold", size: "lg", wrap: true, gravity: "center", flex: 1 }
+            { type: "text", text: title || words.kind, weight: "bold", size: "lg", wrap: true, gravity: "center", flex: 1 }
           ]
         },
         body: {
@@ -115,7 +121,7 @@
 
       return {
         type: "flex",
-        altText: "予定：" + (title || "予定") + " " + dateText,
+        altText: words.kind + "：" + (title || words.kind) + " " + dateText,
         contents: bubble
       };
     }
@@ -132,7 +138,7 @@
 
       // LINE の中で開かれていないときは、送れないので案内だけ出す
       if (!liff.isInClient()) {
-        show("LINE アプリで開いてください", "このページは LINE の中で開くと、予定のカードを送れます。");
+        show("LINE アプリで開いてください", "このページは LINE の中で開くと、" + words.kind + "のカードを送れます。");
         return;
       }
 
